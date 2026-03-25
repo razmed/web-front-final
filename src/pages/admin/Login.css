@@ -1,0 +1,392 @@
+/* ===================================
+   Login Page - SNTP Admin
+   Route: /admin/login
+   =================================== */
+
+/* Variables de couleurs SNTP */
+:root {
+  --sntp-red-darker: #5A000D;
+  --sntp-red-dark: #810012;
+  --sntp-red: #C1121F;
+  --sntp-red-light: #D32F2F;
+  --sntp-red-lighter: #E57373;
+  --sntp-red-lightest: #FFEBEE;
+  --sntp-black: #0D1B2A;
+  --sntp-gray-darkest: #1B263B;
+  --sntp-gray-dark: #415A77;
+  --sntp-gray: #778DA9;
+  --sntp-gray-light: #B0C4DE;
+  --sntp-gray-lighter: #E0E1DD;
+  --sntp-gray-lightest: #F5F5F5;
+  --sntp-white: #FFFFFF;
+  --sntp-white-soft: #FAFAFA;
+  --sntp-success: #2E7D32;
+  --sntp-success-light: #E8F5E9;
+  --sntp-warning: #ED6C02;
+  --sntp-warning-light: #FFF4E5;
+  --sntp-error: #D32F2F;
+  --sntp-error-light: #FFEBEE;
+  --sntp-info: #0288D1;
+  --sntp-info-light: #E1F5FE;
+}
+
+/* Container principal */
+.Login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--sntp-gray-darkest) 0%, var(--sntp-black) 100%);
+  padding: 20px;
+  padding-top: 100px; /* Marge pour le header */
+}
+
+/* Carte de connexion */
+.Login-card {
+  background: var(--sntp-white);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(13, 27, 42, 0.3);
+  max-width: 550px;
+  width: 100%;
+  overflow: hidden;
+  animation: Login-slideIn 0.3s ease-out;
+}
+
+@keyframes Login-slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header de connexion */
+.Login-header,
+.Login-mfa-header {
+  background: linear-gradient(135deg, var(--sntp-red) 0%, var(--sntp-red-dark) 100%);
+  color: var(--sntp-white);
+  padding: 30px;
+  text-align: center;
+}
+
+.Login-header h1,
+.Login-mfa-header h1 {
+  margin: 0 0 10px 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.Login-header p,
+.Login-mfa-header p {
+  margin: 0;
+  opacity: 0.95;
+  font-size: 14px;
+  color: var(--sntp-white);
+}
+
+/* Timer MFA */
+.Login-mfa-timer {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--sntp-white);
+}
+
+.Login-timer-warning {
+  background: var(--sntp-error);
+  animation: Login-pulse 1s infinite;
+}
+
+@keyframes Login-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Formulaire */
+.Login-form,
+.Login-mfa-content {
+  padding: 30px;
+}
+
+/* Alertes */
+.Login-alert {
+  padding: 12px 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  animation: Login-fadeIn 0.3s ease-in;
+}
+
+@keyframes Login-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.Login-alert-error {
+  background-color: var(--sntp-error-light);
+  color: var(--sntp-error);
+  border: 1px solid var(--sntp-red-lighter);
+}
+
+.Login-alert-success {
+  background-color: var(--sntp-success-light);
+  color: var(--sntp-success);
+  border: 1px solid var(--sntp-success);
+}
+
+/* Groupes de formulaire */
+.Login-form-group {
+  margin-bottom: 20px;
+}
+
+.Login-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--sntp-black);
+  font-size: 14px;
+}
+
+.Login-form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid var(--sntp-gray-lighter);
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+  color: var(--sntp-black);
+  background-color: var(--sntp-white);
+}
+
+.Login-form-group input:focus {
+  outline: none;
+  border-color: var(--sntp-red);
+}
+
+.Login-form-group input:disabled {
+  background-color: var(--sntp-gray-lightest);
+  cursor: not-allowed;
+  color: var(--sntp-gray);
+}
+
+.Login-form-group input::placeholder {
+  color: var(--sntp-gray-light);
+}
+
+/* Boutons */
+.Login-btn {
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-sizing: border-box;
+}
+
+.Login-btn-primary {
+  background: linear-gradient(135deg, var(--sntp-red) 0%, var(--sntp-red-dark) 100%);
+  color: var(--sntp-white);
+}
+
+.Login-btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(193, 18, 31, 0.4);
+  background: linear-gradient(135deg, var(--sntp-red-light) 0%, var(--sntp-red) 100%);
+}
+
+.Login-btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.Login-btn-secondary {
+  background: var(--sntp-gray-dark);
+  color: var(--sntp-white);
+  margin-top: 15px;
+}
+
+.Login-btn-secondary:hover:not(:disabled) {
+  background: var(--sntp-gray-darkest);
+}
+
+/* Instructions MFA */
+.Login-mfa-instructions {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: var(--sntp-gray-lightest);
+  border-radius: 8px;
+  border: 1px solid var(--sntp-gray-lighter);
+}
+
+.Login-instruction-header {
+  font-size: 16px;
+  color: var(--sntp-black);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.Login-email-display {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--sntp-red);
+  margin: 10px 0;
+}
+
+.Login-instruction-text {
+  color: var(--sntp-gray-dark);
+  font-size: 14px;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+/* Grille de nombres MFA */
+.Login-numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.Login-number-button {
+  background: linear-gradient(135deg, var(--sntp-red) 0%, var(--sntp-red-dark) 100%);
+  color: var(--sntp-white);
+  font-size: 36px;
+  font-weight: bold;
+  padding: 30px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(193, 18, 31, 0.3);
+}
+
+.Login-number-button:hover:not(:disabled) {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(193, 18, 31, 0.5);
+  background: linear-gradient(135deg, var(--sntp-red-light) 0%, var(--sntp-red) 100%);
+}
+
+.Login-number-button:active:not(:disabled) {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.Login-number-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.Login-number-button.Login-selected {
+  background: linear-gradient(135deg, var(--sntp-success) 0%, #1B5E20 100%);
+  animation: Login-selected 0.5s ease;
+}
+
+@keyframes Login-selected {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Barre de progression */
+.Login-mfa-progress {
+  margin: 25px 0;
+}
+
+.Login-progress-bar {
+  height: 8px;
+  background: var(--sntp-gray-lighter);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.Login-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--sntp-red) 0%, var(--sntp-success) 100%);
+  transition: width 0.5s ease;
+  border-radius: 4px;
+}
+
+.Login-progress-text {
+  text-align: center;
+  font-size: 14px;
+  color: var(--sntp-gray-dark);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Animation de chargement */
+.Login-btn:disabled {
+  position: relative;
+  overflow: hidden;
+}
+
+.Login-btn:disabled::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: Login-loading 1.5s infinite;
+}
+
+@keyframes Login-loading {
+  to {
+    left: 100%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .Login-container {
+    padding-top: 80px;
+  }
+
+  .Login-card {
+    margin: 20px;
+  }
+
+  .Login-header h1,
+  .Login-mfa-header h1 {
+    font-size: 24px;
+  }
+
+  .Login-numbers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .Login-number-button {
+    font-size: 48px;
+    padding: 40px 20px;
+  }
+
+  .Login-form,
+  .Login-mfa-content {
+    padding: 20px;
+  }
+}
+
