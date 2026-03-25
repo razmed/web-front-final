@@ -1,0 +1,946 @@
+/* ================================================================
+   SNTP LOGISTIQUE & MAINTENANCE
+   Palette : Rouge · Noir · Blanc · Gris UNIQUEMENT
+   Variables scoped dans .SNTPLogistique-page → aucun conflit global
+   ================================================================ */
+
+/* ── Reset local ── */
+.SNTPLogistique-page *,
+.SNTPLogistique-page *::before,
+.SNTPLogistique-page *::after {
+  box-sizing: border-box;
+}
+
+/* ================================================================
+   VARIABLES + BASE — scoped, jamais écrasé par index.css
+   ================================================================ */
+.SNTPLogistique-page {
+  /* Rouge */
+  --red:        #C1121F;
+  --red-dark:   #8B0000;
+
+  /* Noir & Gris */
+  --black:      #111111;
+  --gray-900:   #1C1C1C;
+  --gray-700:   #333333;
+  --gray-500:   #666666;
+  --gray-300:   #999999;
+  --gray-200:   #CCCCCC;
+  --gray-100:   #F4F4F4;
+  --gray-50:    #FAFAFA;
+  --border:     #E0E0E0;
+
+  /* Blanc */
+  --white:      #FFFFFF;
+
+  /* Typographie */
+  --font: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+
+  /* Effets */
+  --ease:       all 0.22s ease;
+  --shadow-sm:  0 1px 6px rgba(0,0,0,0.06);
+  --shadow-md:  0 4px 20px rgba(0,0,0,0.10);
+  --shadow-lg:  0 8px 40px rgba(0,0,0,0.14);
+  --radius:     6px;
+
+  /* Base */
+  font-family: var(--font);
+  color: var(--black);
+  line-height: 1.65;
+  overflow-x: hidden;
+  background: var(--white);
+}
+
+/* ================================================================
+   CONTAINER
+   ================================================================ */
+.SNTPLogistique-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+/* ================================================================
+   HERO
+   ================================================================ */
+.SNTPLogistique-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111111;
+  overflow: hidden;
+}
+
+/* Barre rouge gauche */
+.SNTPLogistique-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: #C1121F;
+  z-index: 3;
+}
+
+/* Ligne rouge bas */
+.SNTPLogistique-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: #8B0000;
+  opacity: 0.5;
+}
+
+.SNTPLogistique-hero-overlay { display: none; }
+
+.SNTPLogistique-hero-particles {
+  position: absolute;
+  top: -20%; right: -10%;
+  width: 480px; height: 480px;
+  background: radial-gradient(circle, #1C1C1C 0%, transparent 70%);
+  border-radius: 50%;
+  animation: SL-float 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes SL-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-20px); }
+}
+
+.SNTPLogistique-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: SL-fadeUp 0.9s ease-out;
+  padding: 48px 24px;
+}
+
+.SNTPLogistique-hero-logo { margin-bottom: 52px; }
+
+.SNTPLogistique-logo-img {
+  width: 148px;
+  height: auto;
+  animation: SL-zoomIn 0.8s ease-out;
+}
+
+.SNTPLogistique-hero-title {
+  font-size: clamp(1.8rem, 4.2vw, 4rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  line-height: 1.1;
+  font-family: var(--font);
+}
+
+.SNTPLogistique-hero-subtitle {
+  font-size: clamp(0.72rem, 1.3vw, 0.88rem);
+  color: #C1121F;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.SNTPLogistique-hero-description {
+  font-size: clamp(0.88rem, 1.2vw, 1rem);
+  color: #999999;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+/* ================================================================
+   SECTION HEADER — commun
+   ================================================================ */
+.SNTPLogistique-section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.SNTPLogistique-section-title {
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+  color: #111111;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  font-family: var(--font);
+}
+
+.SNTPLogistique-section-title-light { color: #FFFFFF !important; }
+
+.SNTPLogistique-section-underline {
+  width: 36px;
+  height: 2px;
+  background: #C1121F;
+  margin: 0 auto 18px;
+  border-radius: 0;
+}
+
+.SNTPLogistique-section-underline-light { background: #666666 !important; }
+
+.SNTPLogistique-section-subtitle {
+  font-size: 0.92rem;
+  color: #666666;
+  max-width: 540px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+.SNTPLogistique-section-subtitle-light { color: #999999 !important; }
+
+/* ================================================================
+   INTRODUCTION
+   ================================================================ */
+.SNTPLogistique-intro-section {
+  padding: 96px 48px;
+  background: #FFFFFF;
+  text-align: center;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.SNTPLogistique-intro-content {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.SNTPLogistique-intro-badge {
+  display: inline-block;
+  border: 1px solid #C1121F;
+  color: #C1121F;
+  background: transparent;
+  padding: 5px 18px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  border-radius: 2px;
+  font-family: var(--font);
+}
+
+.SNTPLogistique-intro-title {
+  font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+  color: #111111;
+  font-weight: 700;
+  margin-bottom: 22px;
+  line-height: 1.25;
+  font-family: var(--font);
+}
+
+.SNTPLogistique-intro-underline {
+  width: 36px;
+  height: 2px;
+  background: #C1121F;
+  margin: 0 auto 36px;
+}
+
+.SNTPLogistique-intro-text {
+  font-size: 1rem;
+  color: #666666;
+  line-height: 1.9;
+  font-weight: 400;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.SNTPLogistique-intro-text strong {
+  color: #111111;
+  font-weight: 600;
+}
+
+/* ================================================================
+   SERVICES
+   ================================================================ */
+.SNTPLogistique-services-section {
+  padding: 96px 48px;
+  background: #F4F4F4;
+}
+
+.SNTPLogistique-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.SNTPLogistique-service-card {
+  background: #FFFFFF;
+  padding: 38px 32px;
+  border-radius: 6px;
+  border: 1px solid #E0E0E0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  transition: all 0.22s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.SNTPLogistique-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 2px; height: 100%;
+  background: #C1121F;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+}
+
+.SNTPLogistique-service-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+  border-color: #F4F4F4;
+  transform: translateY(-4px);
+}
+
+.SNTPLogistique-service-card:hover::before { transform: scaleY(1); }
+
+.SNTPLogistique-service-icon {
+  width: 48px;
+  height: 48px;
+  background: #111111;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: background 0.22s ease;
+}
+
+.SNTPLogistique-service-card:hover .SNTPLogistique-service-icon {
+  background: #C1121F;
+}
+
+.SNTPLogistique-service-icon svg { color: #FFFFFF; }
+
+.SNTPLogistique-service-title {
+  font-size: 1.05rem;
+  color: #111111;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: var(--font);
+}
+
+.SNTPLogistique-service-description {
+  font-size: 0.9rem;
+  color: #666666;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+.SNTPLogistique-service-list {
+  list-style: none;
+  padding: 0;
+  border-top: 1px solid #E0E0E0;
+  padding-top: 16px;
+}
+
+.SNTPLogistique-service-list li {
+  padding: 6px 0 6px 16px;
+  position: relative;
+  color: #333333;
+  font-size: 0.86rem;
+  transition: padding-left 0.2s ease, color 0.2s ease;
+}
+
+.SNTPLogistique-service-list li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 4px; height: 4px;
+  background: #C1121F;
+  border-radius: 50%;
+}
+
+.SNTPLogistique-service-list li:hover {
+  padding-left: 22px;
+  color: #111111;
+}
+
+/* ================================================================
+   ÉQUIPEMENTS — fond noir
+   ================================================================ */
+.SNTPLogistique-equipment-section {
+  padding: 96px 48px;
+  background: #111111;
+  position: relative;
+}
+
+.SNTPLogistique-equipment-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 48px; right: 48px;
+  height: 1px;
+  background: #333333;
+}
+
+.SNTPLogistique-equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: #333333;
+  border: 1px solid #333333;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.SNTPLogistique-equipment-card {
+  background: #111111;
+  padding: 36px 28px;
+  text-align: center;
+  transition: background 0.22s ease;
+  position: relative;
+}
+
+.SNTPLogistique-equipment-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: #C1121F;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.SNTPLogistique-equipment-card:hover {
+  background: #1C1C1C;
+}
+
+.SNTPLogistique-equipment-card:hover::after { transform: scaleX(1); }
+
+.SNTPLogistique-equipment-icon {
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+  display: block;
+}
+
+.SNTPLogistique-equipment-title {
+  color: #FFFFFF;
+  font-weight: 700;
+  margin-bottom: 18px;
+  font-size: 0.72rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-family: var(--font);
+}
+
+.SNTPLogistique-equipment-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.SNTPLogistique-equipment-list li {
+  padding: 7px 0 7px 14px;
+  position: relative;
+  color: #999999;
+  font-size: 0.86rem;
+  border-bottom: 1px solid #1C1C1C;
+}
+
+.SNTPLogistique-equipment-list li:last-child { border-bottom: none; }
+
+.SNTPLogistique-equipment-list li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 3px; height: 3px;
+  background: #C1121F;
+  border-radius: 50%;
+}
+
+/* ================================================================
+   AVANTAGES
+   ================================================================ */
+.SNTPLogistique-advantages-section {
+  padding: 96px 48px;
+  background: #FFFFFF;
+}
+
+.SNTPLogistique-advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.SNTPLogistique-advantage-card {
+  background: #F4F4F4;
+  padding: 36px 30px;
+  border-radius: 6px;
+  border: 1px solid #E0E0E0;
+  transition: all 0.22s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.SNTPLogistique-advantage-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 2px; height: 0;
+  background: #C1121F;
+  transition: height 0.3s ease;
+}
+
+.SNTPLogistique-advantage-card:hover {
+  background: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+  transform: translateY(-4px);
+}
+
+.SNTPLogistique-advantage-card:hover::before { height: 100%; }
+
+.SNTPLogistique-advantage-number {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #E0E0E0;
+  line-height: 1;
+  margin-bottom: 12px;
+  transition: color 0.22s ease;
+  font-family: var(--font);
+}
+
+.SNTPLogistique-advantage-card:hover .SNTPLogistique-advantage-number {
+  color: #C1121F;
+}
+
+.SNTPLogistique-advantage-icon { margin-bottom: 12px; }
+
+.SNTPLogistique-advantage-icon svg {
+  color: #CCCCCC;
+  transition: color 0.22s ease;
+}
+
+.SNTPLogistique-advantage-card:hover .SNTPLogistique-advantage-icon svg {
+  color: #C1121F;
+}
+
+.SNTPLogistique-advantage-title {
+  font-size: 1rem;
+  color: #111111;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: var(--font);
+}
+
+.SNTPLogistique-advantage-text {
+  font-size: 0.88rem;
+  color: #666666;
+  line-height: 1.7;
+}
+
+/* ================================================================
+   PROCESSUS — fond gris très foncé
+   ================================================================ */
+.SNTPLogistique-process-section {
+  padding: 96px 48px;
+  background: #1C1C1C;
+}
+
+.SNTPLogistique-process-timeline {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.SNTPLogistique-process-step {
+  flex: 1;
+  min-width: 200px;
+  padding: 40px 28px;
+  text-align: center;
+  border-right: 1px solid #333333;
+  position: relative;
+  transition: background 0.22s ease;
+}
+
+.SNTPLogistique-process-step:last-child { border-right: none; }
+
+.SNTPLogistique-process-step::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 16px; right: 16px;
+  height: 2px;
+  background: #C1121F;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.SNTPLogistique-process-step:hover { background: #111111; }
+.SNTPLogistique-process-step:hover::after { transform: scaleX(1); }
+
+.SNTPLogistique-process-number {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #333333;
+  line-height: 1;
+  margin-bottom: 18px;
+  transition: color 0.22s ease;
+  font-family: var(--font);
+}
+
+.SNTPLogistique-process-step:hover .SNTPLogistique-process-number {
+  color: #C1121F;
+}
+
+.SNTPLogistique-process-title {
+  font-size: 0.72rem;
+  color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-family: var(--font);
+}
+
+.SNTPLogistique-process-text {
+  font-size: 0.86rem;
+  color: #999999;
+  line-height: 1.7;
+}
+
+/* Flèches JSX masquées */
+.SNTPLogistique-process-arrow { display: none; }
+
+/* ================================================================
+   STATISTIQUES
+   ================================================================ */
+.SNTPLogistique-stats-section {
+  padding: 80px 48px;
+  background: #FFFFFF;
+  border-top: 1px solid #E0E0E0;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.SNTPLogistique-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0;
+  border: 1px solid #E0E0E0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.SNTPLogistique-stat-card {
+  padding: 44px 28px;
+  text-align: center;
+  border-right: 1px solid #E0E0E0;
+  transition: background 0.22s ease;
+  position: relative;
+}
+
+.SNTPLogistique-stat-card:last-child { border-right: none; }
+
+.SNTPLogistique-stat-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: #C1121F;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.SNTPLogistique-stat-card:hover { background: #FAFAFA; }
+.SNTPLogistique-stat-card:hover::after { transform: scaleX(1); }
+
+.SNTPLogistique-stat-icon { margin-bottom: 12px; }
+.SNTPLogistique-stat-icon svg { color: #CCCCCC; }
+
+.SNTPLogistique-stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #111111;
+  line-height: 1;
+  font-family: var(--font);
+}
+
+.SNTPLogistique-stat-unit {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #C1121F;
+  margin-bottom: 10px;
+  font-family: var(--font);
+}
+
+.SNTPLogistique-stat-label {
+  font-size: 0.68rem;
+  color: #666666;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ================================================================
+   CONTACT
+   ================================================================ */
+.SNTPLogistique-contact-section {
+  padding: 96px 48px;
+  background: #F4F4F4;
+}
+
+.SNTPLogistique-contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.SNTPLogistique-contact-map-container {
+  width: 100%;
+  height: 500px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #E0E0E0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+
+/* Carte en niveaux de gris — cohérence palette */
+.SNTPLogistique-google-map {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(100%) contrast(1.05);
+  transition: filter 0.35s ease;
+}
+
+.SNTPLogistique-contact-map-container:hover .SNTPLogistique-google-map {
+  filter: grayscale(20%);
+}
+
+.SNTPLogistique-contact-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.SNTPLogistique-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.SNTPLogistique-contact-item {
+  background: #FFFFFF;
+  padding: 22px 20px;
+  border-radius: 6px;
+  border: 1px solid #E0E0E0;
+  border-left: 2px solid #C1121F;
+  transition: all 0.22s ease;
+}
+
+.SNTPLogistique-contact-item:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+  transform: translateX(4px);
+}
+
+.SNTPLogistique-contact-label {
+  font-size: 0.64rem;
+  color: #C1121F;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-family: var(--font);
+}
+
+.SNTPLogistique-contact-info {
+  font-size: 0.93rem;
+  color: #111111;
+  font-weight: 500;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.SNTPLogistique-contact-info a {
+  color: #111111;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 500;
+  position: relative;
+}
+
+.SNTPLogistique-contact-info a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0;
+  width: 0; height: 1px;
+  background: #C1121F;
+  transition: width 0.25s ease;
+}
+
+.SNTPLogistique-contact-info a:hover { color: #C1121F; }
+.SNTPLogistique-contact-info a:hover::after { width: 100%; }
+
+/* ================================================================
+   BOUTONS
+   ================================================================ */
+.SNTPLogistique-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 36px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  text-decoration: none;
+  font-family: var(--font);
+}
+
+.SNTPLogistique-primary-button {
+  background: #C1121F;
+  color: #FFFFFF;
+}
+
+.SNTPLogistique-primary-button:hover {
+  background: #8B0000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(193,18,31,0.30);
+}
+
+.SNTPLogistique-map-button { width: 100%; }
+.SNTPLogistique-btn-icon { font-size: 0.9rem; }
+
+/* CTA block */
+.SNTPLogistique-contact-cta-text {
+  background: #111111;
+  padding: 26px 22px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.SNTPLogistique-contact-cta-text p {
+  font-size: 0.88rem;
+  color: #999999;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.SNTPLogistique-contact-cta-text strong {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* ================================================================
+   FADE-IN
+   ================================================================ */
+.SNTPLogistique-fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: SL-fadeUp 0.7s ease-out forwards;
+}
+
+/* ================================================================
+   ANIMATIONS — préfixées SL pour éviter conflits globaux
+   ================================================================ */
+@keyframes SL-fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes SL-zoomIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media (max-width: 1200px) {
+  .SNTPLogistique-services-grid    { grid-template-columns: repeat(2, 1fr); }
+  .SNTPLogistique-advantages-grid  { grid-template-columns: repeat(2, 1fr); }
+  .SNTPLogistique-contact-layout   { gap: 40px; }
+  .SNTPLogistique-contact-map-container { height: 420px; }
+}
+
+@media (max-width: 768px) {
+  .SNTPLogistique-container { padding: 0 20px; }
+  .SNTPLogistique-hero      { min-height: 80vh; }
+
+  .SNTPLogistique-services-grid,
+  .SNTPLogistique-advantages-grid,
+  .SNTPLogistique-stats-grid,
+  .SNTPLogistique-equipment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .SNTPLogistique-services-section,
+  .SNTPLogistique-equipment-section,
+  .SNTPLogistique-advantages-section,
+  .SNTPLogistique-process-section,
+  .SNTPLogistique-contact-section {
+    padding: 64px 20px;
+  }
+
+  .SNTPLogistique-intro-section { padding: 64px 20px; }
+
+  .SNTPLogistique-process-timeline { flex-direction: column; }
+
+  .SNTPLogistique-process-step {
+    border-right: none;
+    border-bottom: 1px solid #333333;
+  }
+
+  .SNTPLogistique-process-step:last-child { border-bottom: none; }
+
+  .SNTPLogistique-stats-grid {
+    border: none;
+    border-radius: 0;
+  }
+
+  .SNTPLogistique-stat-card {
+    border-right: none;
+    border-bottom: 1px solid #E0E0E0;
+  }
+
+  .SNTPLogistique-stat-card:last-child { border-bottom: none; }
+
+  .SNTPLogistique-contact-layout  { grid-template-columns: 1fr; gap: 24px; }
+  .SNTPLogistique-contact-map-container { height: 340px; }
+
+  .SNTPLogistique-contact-item {
+    border-left: none;
+    border-top: 2px solid #C1121F;
+  }
+
+  .SNTPLogistique-contact-item:hover { transform: translateY(-3px); }
+
+  .SNTPLogistique-equipment-grid {
+    gap: 1px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .SNTPLogistique-hero-title     { font-size: 1.6rem; letter-spacing: 4px; }
+  .SNTPLogistique-logo-img       { width: 120px; }
+  .SNTPLogistique-section-title  { font-size: 1.3rem; letter-spacing: 3px; }
+
+  .SNTPLogistique-service-card,
+  .SNTPLogistique-advantage-card { padding: 28px 20px; }
+
+  .SNTPLogistique-process-step   { padding: 28px 16px; }
+
+  .SNTPLogistique-contact-section { padding: 52px 14px; }
+  .SNTPLogistique-contact-map-container { height: 280px; }
+  .SNTPLogistique-contact-item   { padding: 18px 16px; }
+
+  .SNTPLogistique-cta-button     { padding: 13px 24px; font-size: 0.68rem; }
+}

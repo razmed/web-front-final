@@ -1,0 +1,414 @@
+/* ====================
+   FAQ PAGE — REDESIGN COMPLET
+   Palette : Rouge · Noir · Blanc · Gris
+==================== */
+
+:root {
+  --red:         #c10b0b;
+  --red-hover:   #970808;
+  --black:       #111111;
+  --white:       #ffffff;
+  --gray-100:    #f6f6f6;
+  --gray-200:    #e8e8e8;
+  --gray-400:    #9e9e9e;
+  --gray-700:    #444444;
+}
+
+/* ===========================
+   HERO — MASQUÉ ENTIÈREMENT
+=========================== */
+
+.faq-hero-section,
+.faq-hero-overlay,
+.faq-hero-content,
+.faq-hero-subtitle,
+.faq-hero-title,
+.faq-hero-divider,
+.faq-hero-description {
+  display: none !important;
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
+/* ===========================
+   SECTION INTRO — PAGE HEADER
+=========================== */
+
+.faq-intro-section {
+  background-color: var(--black);
+  padding: 64px 0 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.faq-intro-card {
+  text-align: center;
+  background: transparent;
+  box-shadow: none;
+  margin: 0 auto;
+  padding: 0;
+  position: static;
+  z-index: auto;
+  animation: fadeInUp 0.7s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.faq-intro-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.2em;
+  background-color: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-intro-icon {
+  font-size: 24px;
+  color: var(--white);
+}
+
+.faq-intro-label {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.78em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: var(--gray-400);
+  margin-bottom: 0.5em;
+}
+
+.faq-intro-title {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 2.8em;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0;
+  line-height: 1.05;
+  letter-spacing: 1px;
+}
+
+.faq-intro-divider {
+  width: 40px;
+  height: 3px;
+  background-color: var(--red);
+  border: none;
+  margin: 16px auto 20px;
+}
+
+.faq-intro-description {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.92em;
+  line-height: 1.75em;
+  color: var(--gray-400);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===========================
+   SECTION 4 CARTES FAQ
+=========================== */
+
+.faq-cards-section {
+  background-color: var(--gray-100);
+  padding: 60px 0 50px;
+}
+
+.faq-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5em;
+}
+
+.faq-card-item {
+  background-color: var(--white);
+  padding: 2em 2em 2em;
+  border-top: 3px solid var(--gray-200);
+  box-shadow: none;
+  transition: border-top-color 0.22s ease, transform 0.22s ease;
+  position: relative;
+}
+
+.faq-card-item::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--red);
+  transition: width 0.3s ease;
+}
+
+.faq-card-item:hover::before {
+  width: 100%;
+}
+
+.faq-card-item:hover {
+  transform: translateY(-3px);
+}
+
+.faq-card-title {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.18em;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 0.75em;
+  line-height: 1.35;
+}
+
+.faq-card-content {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.87em;
+  line-height: 1.75em;
+  color: var(--gray-700);
+  margin: 0;
+  white-space: pre-line;
+}
+
+/* ===========================
+   SECTION ACCORDÉON
+=========================== */
+
+.faq-accordion-section {
+  background-color: var(--white);
+  padding: 60px 0 70px;
+}
+
+.faq-accordion-layout {
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  gap: 5em;
+  align-items: flex-start;
+}
+
+/* Colonne gauche */
+
+.faq-accordion-header-col {
+  padding: 0;
+  position: sticky;
+  top: 2em;
+}
+
+.faq-flash-subtitle {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.78em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: var(--gray-400);
+  margin-bottom: 0.5em;
+}
+
+.faq-flash-title {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 2.5em;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 0;
+  line-height: 1.05;
+}
+
+.faq-flash-divider {
+  width: 40px;
+  height: 3px;
+  background-color: var(--red);
+  border: none;
+  margin: 14px 0 18px 0;
+}
+
+.faq-flash-description {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9em;
+  line-height: 1.8em;
+  color: var(--gray-700);
+}
+
+.faq-flash-description a {
+  color: var(--red);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.faq-flash-description a:hover {
+  text-decoration: underline;
+}
+
+/* Colonne droite — Accordéon */
+
+.faq-accordion-col {
+  padding: 0;
+}
+
+.faq-accordion-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--gray-200);
+}
+
+.faq-accordion-item {
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.faq-accordion-trigger {
+  width: 100%;
+  background-color: transparent;
+  color: var(--black);
+  border: none;
+  padding: 1.1em 0;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  transition: color 0.2s ease;
+}
+
+.faq-accordion-trigger:hover,
+.faq-accordion-trigger.active {
+  color: var(--red);
+}
+
+.faq-accordion-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+  color: var(--red);
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.faq-accordion-trigger.active .faq-accordion-icon {
+  transform: rotate(45deg);
+}
+
+.faq-accordion-title-text {
+  flex: 1;
+}
+
+.faq-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.32s ease;
+  background-color: transparent;
+}
+
+.faq-accordion-content.active {
+  max-height: 500px;
+  padding-bottom: 1.2em;
+}
+
+.faq-accordion-content p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.88em;
+  font-weight: 400;
+  line-height: 1.75em;
+  color: var(--gray-700);
+  margin: 0;
+  border-left: 3px solid var(--red);
+  padding-left: 1em;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 1024px) {
+  .faq-accordion-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5em;
+  }
+
+  .faq-accordion-header-col {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-intro-section {
+    padding: 48px 0 44px;
+  }
+
+  .faq-intro-title {
+    font-size: 2.2em;
+  }
+
+  .faq-cards-section {
+    padding: 40px 0 36px;
+  }
+
+  .faq-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+
+  .faq-accordion-section {
+    padding: 40px 0 50px;
+  }
+
+  .faq-flash-title {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .faq-flash-subtitle {
+    text-align: center;
+  }
+
+  .faq-flash-divider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .faq-flash-description {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1.2em;
+  }
+
+  .faq-intro-title {
+    font-size: 1.9em;
+  }
+
+  .faq-intro-icon-wrapper {
+    width: 48px;
+    height: 48px;
+  }
+
+  .faq-intro-icon {
+    font-size: 20px;
+  }
+
+  .faq-accordion-trigger {
+    font-size: 1em;
+    padding: 0.9em 0;
+  }
+
+  .faq-card-item {
+    padding: 1.4em;
+  }
+}

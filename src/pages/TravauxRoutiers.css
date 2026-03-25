@@ -1,0 +1,2676 @@
+/* ====================
+   TRAVAUX ROUTIERS - DESIGN MODERNE 2026
+   Palette: Rouge, Noir, Blanc, Gris
+==================== */
+
+:root {
+  /* Palette Moderne */
+  --modern-red: #DC2626;
+  --modern-red-dark: #991B1B;
+  --modern-red-light: #FCA5A5;
+  --modern-black: #000000;
+  --modern-black-soft: #111111;
+  --modern-gray-darkest: #1F1F1F;
+  --modern-gray-dark: #404040;
+  --modern-gray: #737373;
+  --modern-gray-light: #A3A3A3;
+  --modern-gray-lighter: #D4D4D4;
+  --modern-gray-lightest: #F5F5F5;
+  --modern-white: #FFFFFF;
+  
+  /* Shadows modernes */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.24);
+  --shadow-red: 0 8px 24px rgba(220, 38, 38, 0.3);
+}
+
+/* ==================== HERO SECTION AVEC VIDÉO ==================== */
+.TravauxRoutiers-hero {
+  position: relative;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  margin-top: -120px;
+  padding-top: 120px;
+  overflow: hidden;
+}
+
+.TravauxRoutiers-hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.TravauxRoutiers-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(31, 31, 31, 0.75) 50%, rgba(0, 0, 0, 0.9) 100%);
+  z-index: 1;
+}
+
+.TravauxRoutiers-hero::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, 30px) scale(1.1); }
+}
+
+.TravauxRoutiers-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.TravauxRoutiers-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  color: var(--modern-white);
+  text-align: left;
+  animation: TravauxRoutiers-fadeInUp 1.2s ease-out;
+}
+
+@keyframes TravauxRoutiers-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.TravauxRoutiers-breadcrumb {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: var(--modern-gray-light);
+  margin-bottom: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.TravauxRoutiers-title {
+  font-family: "Poppins", "Rajdhani", sans-serif;
+  font-size: 4.2em;
+  font-weight: 800;
+  text-transform: capitalize;
+  color: var(--modern-white);
+  margin-bottom: 0.5em;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.TravauxRoutiers-description {
+  font-family: "Inter", sans-serif;
+  font-size: 1.15em;
+  font-weight: 400;
+  line-height: 1.8em;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 750px;
+}
+
+/* ==================== MISSION PRINCIPALE ==================== */
+.TravauxRoutiers-mission-section {
+  background: linear-gradient(180deg, var(--modern-black) 0%, var(--modern-black-soft) 100%);
+  padding: 0;
+  margin-top: -120px;
+  position: relative;
+  z-index: 10;
+}
+
+.TravauxRoutiers-mission-card {
+  background: var(--modern-white);
+  padding: 5em 4em;
+  border-radius: 24px;
+  box-shadow: var(--shadow-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.TravauxRoutiers-mission-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--modern-red) 0%, var(--modern-red-dark) 100%);
+}
+
+.TravauxRoutiers-mission-header {
+  text-align: center;
+  margin-bottom: 4em;
+}
+
+.TravauxRoutiers-mission-icon {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 2em;
+  background: linear-gradient(135deg, var(--modern-red) 0%, var(--modern-red-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: var(--shadow-red);
+  position: relative;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
+  50% { box-shadow: 0 0 0 20px rgba(220, 38, 38, 0); }
+}
+
+.TravauxRoutiers-mission-icon svg {
+  font-size: 38px;
+  color: var(--modern-white);
+}
+
+.TravauxRoutiers-mission-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--modern-red);
+  margin-bottom: 0.8em;
+  letter-spacing: 3px;
+}
+
+.TravauxRoutiers-mission-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 3.2em;
+  font-weight: 800;
+  text-transform: capitalize;
+  color: var(--modern-black);
+  margin-bottom: 1em;
+  letter-spacing: -1px;
+}
+
+.TravauxRoutiers-mission-description {
+  font-family: "Inter", sans-serif;
+  font-size: 1.05em;
+  line-height: 1.9em;
+  color: var(--modern-gray-dark);
+  max-width: 900px;
+  margin: 0 auto 2.5em;
+}
+
+.TravauxRoutiers-mission-description strong {
+  color: var(--modern-black);
+  font-weight: 700;
+}
+
+/* Cartes d'expertise */
+.TravauxRoutiers-expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5em;
+  margin-top: 3.5em;
+}
+
+.TravauxRoutiers-expertise-card {
+  text-align: center;
+  padding: 2.5em 2em;
+  background: var(--modern-gray-lightest);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.TravauxRoutiers-expertise-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--modern-red);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.TravauxRoutiers-expertise-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  background: var(--modern-white);
+}
+
+.TravauxRoutiers-expertise-card:hover::before {
+  transform: scaleX(1);
+}
+
+.TravauxRoutiers-expertise-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5em;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: var(--modern-red);
+  transition: all 0.4s ease;
+}
+
+.TravauxRoutiers-expertise-card:hover .TravauxRoutiers-expertise-icon {
+  transform: scale(1.15) rotate(5deg);
+  color: var(--modern-red-dark);
+}
+
+.TravauxRoutiers-expertise-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--modern-black);
+  margin-bottom: 0.8em;
+}
+
+.TravauxRoutiers-expertise-desc {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95em;
+  line-height: 1.7em;
+  color: var(--modern-gray);
+}
+
+/* ==================== SPÉCIALITÉ SECTION ==================== */
+.TravauxRoutiers-specialite-section {
+  background: var(--modern-white);
+  padding: 140px 0;
+  position: relative;
+}
+
+.TravauxRoutiers-specialite-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6em;
+  align-items: center;
+}
+
+.TravauxRoutiers-specialite-image-wrapper {
+  position: relative;
+}
+
+.TravauxRoutiers-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: var(--shadow-xl);
+}
+
+.TravauxRoutiers-image-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.2) 0%, transparent 100%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.TravauxRoutiers-image-container:hover::before {
+  opacity: 1;
+}
+
+.TravauxRoutiers-specialite-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+
+.TravauxRoutiers-image-container:hover .TravauxRoutiers-specialite-img {
+  transform: scale(1.08);
+}
+
+.TravauxRoutiers-specialite-content {
+  padding: 0;
+}
+
+.TravauxRoutiers-section-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--modern-red);
+  margin-bottom: 1em;
+  letter-spacing: 3px;
+  display: inline-block;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--modern-red);
+}
+
+.TravauxRoutiers-section-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 3.2em;
+  font-weight: 800;
+  text-transform: capitalize;
+  color: var(--modern-black);
+  margin-bottom: 1em;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.TravauxRoutiers-section-description {
+  font-family: "Inter", sans-serif;
+  font-size: 1.05em;
+  line-height: 1.9em;
+  color: var(--modern-gray-dark);
+  margin-bottom: 2.5em;
+}
+
+.TravauxRoutiers-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.TravauxRoutiers-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  margin-bottom: 1.2em;
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+  color: var(--modern-gray-dark);
+  padding: 1em;
+  background: var(--modern-gray-lightest);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.TravauxRoutiers-feature-item:hover {
+  background: var(--modern-white);
+  box-shadow: var(--shadow-md);
+  transform: translateX(8px);
+}
+
+.TravauxRoutiers-feature-bullet {
+  color: var(--modern-red);
+  font-size: 1.3em;
+  flex-shrink: 0;
+}
+
+/* ==================== DÉSENCLAVER SECTION ==================== */
+.TravauxRoutiers-desenclaver-section {
+  background: var(--modern-gray-lightest);
+  padding: 140px 0;
+  position: relative;
+}
+
+.TravauxRoutiers-desenclaver-header {
+  text-align: center;
+  margin-bottom: 5em;
+}
+
+.TravauxRoutiers-desenclaver-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--modern-red);
+  margin-bottom: 1em;
+  letter-spacing: 3px;
+}
+
+.TravauxRoutiers-desenclaver-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 3.5em;
+  font-weight: 800;
+  text-transform: capitalize;
+  color: var(--modern-black);
+  margin-bottom: 0.8em;
+  letter-spacing: -1px;
+}
+
+.TravauxRoutiers-section-divider {
+  width: 120px;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, var(--modern-red), transparent);
+  margin: 1.5em auto;
+  border-radius: 10px;
+}
+
+.TravauxRoutiers-desenclaver-grid {
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  gap: 5em;
+  align-items: flex-start;
+}
+
+.TravauxRoutiers-desenclaver-image-col {
+  position: sticky;
+  top: 120px;
+}
+
+.TravauxRoutiers-desenclaver-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: var(--shadow-xl);
+  transition: transform 0.4s ease;
+}
+
+.TravauxRoutiers-desenclaver-img:hover {
+  transform: scale(1.02);
+}
+
+.TravauxRoutiers-desenclaver-text-col {
+  padding: 0;
+}
+
+.TravauxRoutiers-desenclaver-text-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--modern-black);
+  margin-bottom: 1.8em;
+  line-height: 1.3;
+}
+
+.TravauxRoutiers-desenclaver-paragraph {
+  font-family: "Inter", sans-serif;
+  font-size: 1.05em;
+  line-height: 1.9em;
+  color: var(--modern-gray-dark);
+  margin-bottom: 1.8em;
+}
+
+/* Barres de progression modernes */
+.TravauxRoutiers-progress-container {
+  margin-top: 3.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+}
+
+.TravauxRoutiers-progress-item {
+  width: 100%;
+  padding: 1.5em;
+  background: var(--modern-white);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.TravauxRoutiers-progress-item:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.TravauxRoutiers-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.TravauxRoutiers-progress-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.15em;
+  font-weight: 700;
+  color: var(--modern-black);
+}
+
+.TravauxRoutiers-progress-percentage {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3em;
+  font-weight: 800;
+  color: var(--modern-red);
+}
+
+.TravauxRoutiers-progress-bar-bg {
+  width: 100%;
+  height: 12px;
+  background: var(--modern-gray-lighter);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.TravauxRoutiers-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--modern-red) 0%, var(--modern-red-dark) 100%);
+  border-radius: 10px;
+  transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.TravauxRoutiers-progress-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* ==================== CAPACITÉ SECTION ==================== */
+.TravauxRoutiers-capacite-section {
+  background: linear-gradient(135deg, var(--modern-black) 0%, var(--modern-gray-darkest) 100%);
+  padding: 140px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.TravauxRoutiers-capacite-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.TravauxRoutiers-capacite-header {
+  max-width: 1000px;
+  margin-bottom: 5em;
+}
+
+.TravauxRoutiers-capacite-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--modern-red-light);
+  margin-bottom: 1em;
+  letter-spacing: 3px;
+}
+
+.TravauxRoutiers-capacite-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 3.5em;
+  font-weight: 800;
+  text-transform: capitalize;
+  color: var(--modern-white);
+  margin-bottom: 1em;
+  letter-spacing: -1px;
+}
+
+.TravauxRoutiers-capacite-description {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1em;
+  line-height: 1.9em;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2.5em;
+}
+
+.TravauxRoutiers-capacite-description strong {
+  color: var(--modern-white);
+  font-weight: 700;
+}
+
+.TravauxRoutiers-capacite-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5em;
+}
+
+.TravauxRoutiers-capacite-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-family: "Inter", sans-serif;
+  font-size: 1.05em;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.TravauxRoutiers-capacite-feature-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--modern-red);
+  transform: translateX(8px);
+}
+
+.TravauxRoutiers-capacite-check {
+  color: var(--modern-red);
+  font-size: 1.3em;
+  flex-shrink: 0;
+}
+
+.TravauxRoutiers-capacite-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5em;
+  margin-top: 4em;
+}
+
+.TravauxRoutiers-capacite-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  height: 300px;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-lg);
+}
+
+.TravauxRoutiers-capacite-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 1;
+  transition: opacity 0.5s ease;
+}
+
+.TravauxRoutiers-capacite-card:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-xl);
+}
+
+.TravauxRoutiers-capacite-card:hover::before {
+  opacity: 0.7;
+}
+
+.TravauxRoutiers-capacite-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.TravauxRoutiers-capacite-card:hover .TravauxRoutiers-capacite-card-img {
+  transform: scale(1.15) rotate(2deg);
+}
+
+.TravauxRoutiers-capacite-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, transparent 100%);
+  padding: 2.5em 2em;
+  z-index: 2;
+}
+
+.TravauxRoutiers-capacite-card-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6em;
+  font-weight: 700;
+  color: var(--modern-white);
+  margin: 0;
+  text-transform: capitalize;
+  position: relative;
+  padding-left: 20px;
+}
+
+.TravauxRoutiers-capacite-card-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 100%;
+  background: var(--modern-red);
+  border-radius: 2px;
+}
+
+/* ==================== CTA FINALE ==================== */
+.TravauxRoutiers-cta-finale {
+  background: linear-gradient(135deg, var(--modern-red) 0%, var(--modern-red-dark) 100%);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.TravauxRoutiers-cta-finale::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -15%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 10s ease-in-out infinite;
+}
+
+.TravauxRoutiers-cta-finale::after {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.TravauxRoutiers-cta-content {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.TravauxRoutiers-cta-pretitle {
+  font-family: "Inter", sans-serif;
+  font-size: 1.05em;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.TravauxRoutiers-cta-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 4em;
+  font-weight: 900;
+  color: var(--modern-white);
+  margin-bottom: 0.6em;
+  letter-spacing: -1px;
+  text-transform: capitalize;
+  line-height: 1.1;
+}
+
+.TravauxRoutiers-cta-description {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25em;
+  line-height: 1.8em;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 3em;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.TravauxRoutiers-cta-buttons {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.TravauxRoutiers-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 40px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.TravauxRoutiers-cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+
+.TravauxRoutiers-cta-btn:hover::before {
+  transform: translateX(0);
+}
+
+.TravauxRoutiers-cta-btn-primary {
+  background: var(--modern-white);
+  color: var(--modern-red);
+  border: 3px solid var(--modern-white);
+  box-shadow: var(--shadow-lg);
+}
+
+.TravauxRoutiers-cta-btn-primary:hover {
+  background: transparent;
+  color: var(--modern-white);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.TravauxRoutiers-cta-btn-outline {
+  background: transparent;
+  color: var(--modern-white);
+  border: 3px solid var(--modern-white);
+}
+
+.TravauxRoutiers-cta-btn-outline:hover {
+  background: var(--modern-white);
+  color: var(--modern-red);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.TravauxRoutiers-cta-btn svg {
+  transition: transform 0.4s ease;
+}
+
+.TravauxRoutiers-cta-btn:hover svg {
+  transform: translateX(6px);
+}
+
+/* ==================== CONTAINER & UTILITIES ==================== */
+.TravauxRoutiers-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2.5em;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+  .TravauxRoutiers-hero {
+    min-height: 600px;
+    margin-top: -80px;
+    padding-top: 80px;
+  }
+
+  .TravauxRoutiers-title {
+    font-size: 3.2em;
+  }
+
+  .TravauxRoutiers-expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 2em;
+  }
+
+  .TravauxRoutiers-specialite-grid {
+    grid-template-columns: 1fr;
+    gap: 4em;
+  }
+
+  .TravauxRoutiers-specialite-image-wrapper {
+    order: -1;
+  }
+
+  .TravauxRoutiers-desenclaver-grid {
+    grid-template-columns: 1fr;
+    gap: 4em;
+  }
+
+  .TravauxRoutiers-desenclaver-image-col {
+    position: relative;
+    top: 0;
+  }
+
+  .TravauxRoutiers-capacite-features-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .TravauxRoutiers-hero {
+    min-height: 550px;
+  }
+
+  .TravauxRoutiers-title {
+    font-size: 2.5em;
+  }
+
+  .TravauxRoutiers-mission-card {
+    padding: 3.5em 2.5em;
+    border-radius: 20px;
+  }
+
+  .TravauxRoutiers-mission-title {
+    font-size: 2.5em;
+  }
+
+  .TravauxRoutiers-section-title,
+  .TravauxRoutiers-desenclaver-title,
+  .TravauxRoutiers-capacite-title {
+    font-size: 2.5em;
+  }
+
+  .TravauxRoutiers-capacite-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .TravauxRoutiers-cta-title {
+    font-size: 2.8em;
+  }
+
+  .TravauxRoutiers-cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .TravauxRoutiers-specialite-section,
+  .TravauxRoutiers-desenclaver-section,
+  .TravauxRoutiers-capacite-section,
+  .TravauxRoutiers-cta-finale {
+    padding: 100px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .TravauxRoutiers-title {
+    font-size: 2em;
+  }
+
+  .TravauxRoutiers-mission-title {
+    font-size: 2em;
+  }
+
+  .TravauxRoutiers-section-title,
+  .TravauxRoutiers-desenclaver-title,
+  .TravauxRoutiers-capacite-title {
+    font-size: 2em;
+  }
+
+  .TravauxRoutiers-cta-title {
+    font-size: 2.2em;
+  }
+
+  .TravauxRoutiers-cta-btn {
+    padding: 16px 32px;
+    font-size: 0.9em;
+  }
+
+  .TravauxRoutiers-container {
+    padding: 0 1.5em;
+  }
+
+  .TravauxRoutiers-mission-card {
+    padding: 2.5em 1.5em;
+  }
+}
+
+/* Selection moderne */
+::selection {
+  background-color: var(--modern-red);
+  color: var(--modern-white);
+}
+
+/* Focus states modernes */
+*:focus-visible {
+  outline: 3px solid var(--modern-red);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Scrollbar moderne */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--modern-gray-lightest);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--modern-gray);
+  border-radius: 6px;
+  border: 2px solid var(--modern-gray-lightest);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--modern-red);
+}
+/* ==================== SECTION NOTRE EXPERTISE - CARROUSEL ==================== */
+.TravauxRoutiers-expertise {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.TravauxRoutiers-expertise::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(90deg, rgba(220, 38, 38, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(220, 38, 38, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+/* En-tête de section */
+.expertise-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.expertise-subtitle {
+  display: inline-block;
+  color: #dc2626;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  padding: 10px 24px;
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  border-radius: 30px;
+}
+
+.expertise-title {
+  font-size: 48px;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 20px 0;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.expertise-divider {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #dc2626, #991b1b);
+  margin: 25px auto;
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+}
+
+.expertise-intro {
+  font-size: 18px;
+  color: #d1d5db;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Carrousel Container */
+.carousel-container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+/* Wrapper du carrousel */
+.carousel-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Track des cartes */
+.carousel-track {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Carte du carrousel */
+.carousel-card {
+  flex: 0 0 calc(33.333% - 20px);
+  background: linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%);
+  border-radius: 16px;
+  padding: 40px 30px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+}
+
+.carousel-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #dc2626, #991b1b);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.carousel-card:hover {
+  transform: translateY(-10px);
+  border-color: #dc2626;
+  box-shadow: 0 20px 50px rgba(220, 38, 38, 0.3);
+}
+
+.carousel-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Contenu de la carte */
+.carousel-card-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-card-title {
+  font-size: 17px;
+  color: #1a1a1a;
+  line-height: 1.7;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Footer de la carte */
+.carousel-card-footer {
+  margin-top: 25px;
+  padding-top: 20px;
+}
+
+.carousel-card-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #dc2626, transparent);
+  transition: width 0.4s ease;
+}
+
+.carousel-card:hover .carousel-card-line {
+  width: 100%;
+}
+
+/* Flèches de navigation */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.4);
+}
+
+.carousel-arrow:hover {
+  background: linear-gradient(135deg, #991b1b, #7f1d1d);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 12px 30px rgba(220, 38, 38, 0.6);
+}
+
+.carousel-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-arrow-left {
+  left: 0;
+}
+
+.carousel-arrow-right {
+  right: 0;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .carousel-card {
+    flex: 0 0 calc(33.333% - 20px);
+  }
+}
+
+@media (max-width: 968px) {
+  .TravauxRoutiers-expertise {
+    padding: 70px 0;
+  }
+
+  .expertise-title {
+    font-size: 36px;
+  }
+
+  .carousel-container {
+    padding: 0 70px;
+  }
+
+  .carousel-card {
+    flex: 0 0 calc(50% - 15px);
+    min-height: 180px;
+  }
+
+  .carousel-track {
+    gap: 20px;
+  }
+
+  .carousel-arrow {
+    width: 45px;
+    height: 45px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .expertise-title {
+    font-size: 28px;
+  }
+
+  .expertise-intro {
+    font-size: 16px;
+  }
+
+  .carousel-container {
+    padding: 0 60px;
+  }
+
+  .carousel-card {
+    flex: 0 0 100%;
+    padding: 30px 25px;
+    min-height: 160px;
+  }
+
+  .carousel-card-title {
+    font-size: 16px;
+  }
+
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    padding: 0 50px;
+  }
+
+  .expertise-subtitle {
+    font-size: 11px;
+    padding: 8px 18px;
+  }
+
+  .expertise-title {
+    font-size: 24px;
+  }
+
+  .carousel-card {
+    padding: 25px 20px;
+    min-height: 150px;
+  }
+
+  .carousel-card-title {
+    font-size: 15px;
+  }
+}
+/* ==================== SECTION OPÉRATIONS SPÉCIALISÉES ==================== */
+.operations-specialisees {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.operations-specialisees::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.03) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* En-tête de section */
+.operations-header {
+  text-align: center;
+  margin-bottom: 70px;
+  position: relative;
+  z-index: 1;
+}
+
+.operations-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  background: linear-gradient(135deg, #ffffff, #f5f5f5);
+  padding: 10px 28px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.operations-title {
+  font-size: 46px;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 20px 0;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.operations-divider {
+  width: 120px;
+  height: 5px;
+  background: linear-gradient(90deg, #dc2626, #ffffff);
+  margin: 30px auto;
+  border-radius: 3px;
+  position: relative;
+}
+
+.operations-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: #dc2626;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.3);
+}
+
+.operations-description {
+  font-size: 18px;
+  color: #d1d5db;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+/* Grille de cartes */
+.operations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Carte d'opération */
+.operation-card {
+  background: linear-gradient(145deg, #2d2d2d 0%, #1a1a1a 100%);
+  border-radius: 20px;
+  padding: 45px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 2px solid #3f3f3f;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+}
+
+.operation-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+.operation-card:hover {
+  border-color: #dc2626;
+  box-shadow: 0 20px 50px rgba(220, 38, 38, 0.4);
+  transform: translateY(-10px);
+}
+
+.operation-card:hover::before {
+  opacity: 1;
+}
+
+/* Wrapper de l'icône */
+.operation-icon-wrapper {
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.operation-icon-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulseOp 3s ease-in-out infinite;
+}
+
+@keyframes pulseOp {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.operation-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+  transition: all 0.5s ease;
+}
+
+.operation-card:hover .operation-icon {
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  color: #dc2626;
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.operation-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  transition: color 0.5s ease;
+}
+
+.operation-card:hover .operation-card-title {
+  color: #1a1a1a;
+}
+
+.operation-card-line {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #dc2626, transparent);
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+.operation-card:hover .operation-card-line {
+  width: 100%;
+  background: linear-gradient(90deg, #dc2626, #991b1b);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .operations-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .operations-specialisees {
+    padding: 70px 0;
+  }
+
+  .operations-title {
+    font-size: 32px;
+  }
+
+  .operations-description {
+    font-size: 16px;
+  }
+
+  .operations-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .operation-card {
+    min-height: 300px;
+    padding: 35px 25px;
+  }
+
+  .operation-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+
+  .operation-card-title {
+    font-size: 16px;
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .operations-badge {
+    font-size: 10px;
+    padding: 8px 20px;
+  }
+
+  .operations-title {
+    font-size: 26px;
+  }
+
+  .operation-card {
+    min-height: 280px;
+    padding: 30px 20px;
+  }
+
+  .operation-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .operation-card-title {
+    font-size: 15px;
+  }
+}
+/* ==================== SECTION INFRASTRUCTURES CRITIQUES ==================== */
+.infrastructures-critiques {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.infrastructures-critiques::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 0%, rgba(220, 38, 38, 0.03) 100%);
+  pointer-events: none;
+}
+
+/* En-tête de section */
+.infrastructures-header {
+  text-align: center;
+  margin-bottom: 70px;
+  position: relative;
+  z-index: 1;
+}
+
+.infrastructures-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  padding: 10px 28px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+}
+
+.infrastructures-title {
+  font-size: 46px;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin: 20px 0;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.infrastructures-divider {
+  width: 120px;
+  height: 5px;
+  background: linear-gradient(90deg, #dc2626, #1a1a1a);
+  margin: 30px auto;
+  border-radius: 3px;
+  position: relative;
+}
+
+.infrastructures-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: #dc2626;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.2);
+}
+
+.infrastructures-description {
+  font-size: 18px;
+  color: #4b5563;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+/* Contenu avec image et liste */
+.infrastructures-content {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  gap: 60px;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Image à gauche */
+.infrastructures-image-wrapper {
+  position: relative;
+}
+
+.infrastructures-image-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: all 0.5s ease;
+}
+
+.infrastructures-image-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 30px 80px rgba(220, 38, 38, 0.2);
+}
+
+.infrastructures-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.infrastructures-image-container:hover .infrastructures-image {
+  transform: scale(1.05);
+}
+
+.infrastructures-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(26, 26, 26, 0.2) 100%);
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.infrastructures-image-container:hover .infrastructures-image-overlay {
+  opacity: 0.5;
+}
+
+/* Liste à droite */
+.infrastructures-list-wrapper {
+  position: relative;
+}
+
+.infrastructures-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.infrastructures-list-item {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 25px 30px;
+  margin-bottom: 20px;
+  background: linear-gradient(145deg, #ffffff 0%, #f9fafb 100%);
+  border-radius: 15px;
+  border-left: 4px solid #dc2626;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.infrastructures-list-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(220, 38, 38, 0.05), transparent);
+  transition: width 0.4s ease;
+}
+
+.infrastructures-list-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 12px 35px rgba(220, 38, 38, 0.15);
+  border-left-width: 6px;
+}
+
+.infrastructures-list-item:hover::before {
+  width: 100%;
+}
+
+.infrastructures-item-icon {
+  flex-shrink: 0;
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #dc2626;
+  font-size: 24px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.infrastructures-list-item:hover .infrastructures-item-icon {
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  color: #ffffff;
+  transform: rotate(10deg) scale(1.1);
+}
+
+.infrastructures-item-text {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .infrastructures-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .infrastructures-image-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .infrastructures-critiques {
+    padding: 70px 0;
+  }
+
+  .infrastructures-title {
+    font-size: 32px;
+  }
+
+  .infrastructures-description {
+    font-size: 16px;
+  }
+
+  .infrastructures-content {
+    gap: 40px;
+  }
+
+  .infrastructures-list-item {
+    padding: 20px 25px;
+    gap: 20px;
+    margin-bottom: 15px;
+  }
+
+  .infrastructures-item-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+
+  .infrastructures-item-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .infrastructures-badge {
+    font-size: 10px;
+    padding: 8px 20px;
+  }
+
+  .infrastructures-title {
+    font-size: 26px;
+  }
+
+  .infrastructures-list-item {
+    padding: 18px 20px;
+    gap: 15px;
+    flex-direction: row;
+  }
+
+  .infrastructures-item-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .infrastructures-item-text {
+    font-size: 15px;
+  }
+}
+/* ==================== SECTION PORTFOLIO ROUTIER ==================== */
+.portfolio-routier {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.portfolio-image-container {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.portfolio-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-image-container:hover .portfolio-image {
+  transform: scale(1.05);
+}
+
+/* Overlay sombre sur l'image */
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.75) 50%, rgba(220, 38, 38, 0.5) 100%);
+  z-index: 1;
+}
+
+/* Contenu centré */
+.portfolio-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.portfolio-title {
+  font-size: 52px;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.3;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  margin: 0 0 30px 0;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ligne décorative sous le titre */
+.portfolio-line {
+  width: 150px;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, transparent);
+  margin: 0 auto;
+  border-radius: 3px;
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
+  animation: expandLine 1.5s ease-out;
+}
+
+@keyframes expandLine {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 150px;
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .portfolio-image-container {
+    height: 500px;
+  }
+
+  .portfolio-title {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-image-container {
+    height: 400px;
+  }
+
+  .portfolio-title {
+    font-size: 32px;
+    letter-spacing: 1px;
+  }
+
+  .portfolio-line {
+    width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-image-container {
+    height: 350px;
+  }
+
+  .portfolio-title {
+    font-size: 24px;
+    letter-spacing: 0.5px;
+  }
+
+  .portfolio-line {
+    width: 100px;
+    height: 4px;
+  }
+}
+
+/* ==================== SECTION PROJETS INTERNATIONAUX ==================== */
+.projets-internationaux {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.projets-internationaux::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(90deg, rgba(220, 38, 38, 0.02) 1px, transparent 1px),
+    linear-gradient(rgba(220, 38, 38, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* En-tête de section */
+.projets-header {
+  text-align: center;
+  margin-bottom: 70px;
+  position: relative;
+  z-index: 1;
+}
+
+.projets-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  padding: 10px 28px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+}
+
+.projets-main-title {
+  font-size: 48px;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin: 20px 0;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.projets-divider {
+  width: 120px;
+  height: 5px;
+  background: linear-gradient(90deg, #dc2626, #1a1a1a);
+  margin: 30px auto;
+  border-radius: 3px;
+  position: relative;
+}
+
+.projets-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: #dc2626;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.2);
+}
+
+/* Bloc projet principal */
+.projet-block {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-radius: 20px;
+  padding: 50px 60px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.projet-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, #dc2626, #991b1b);
+}
+
+.projet-title-wrapper {
+  margin-bottom: 25px;
+}
+
+.projet-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.projet-content {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 25px;
+}
+
+.projet-description {
+  font-size: 17px;
+  color: #d1d5db;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Section de projets */
+.projets-section {
+  max-width: 1400px;
+  margin: 0 auto 80px;
+}
+
+.projets-section-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+  padding-left: 20px;
+  border-left: 5px solid #dc2626;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+/* Grille de cartes */
+.projets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.projet-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f9fafb 100%);
+  border-radius: 16px;
+  padding: 35px 30px;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.projet-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #dc2626, #991b1b);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.projet-card:hover {
+  transform: translateY(-8px);
+  border-color: #dc2626;
+  box-shadow: 0 20px 50px rgba(220, 38, 38, 0.2);
+}
+
+.projet-card:hover::before {
+  transform: scaleX(1);
+}
+
+.projet-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.projet-number {
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  color: #dc2626;
+  font-size: 20px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+}
+
+.projet-card:hover .projet-number {
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  color: #ffffff;
+  transform: rotate(10deg) scale(1.1);
+}
+
+.projet-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.projet-card-text {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.7;
+  margin: 0 0 20px 0;
+}
+
+.projet-card-value {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.value-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.value-amount {
+  font-size: 22px;
+  font-weight: 900;
+  color: #dc2626;
+  letter-spacing: -0.5px;
+}
+
+/* Liste de projets */
+.projets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projet-list-item {
+  display: flex;
+  gap: 25px;
+  background: linear-gradient(145deg, #ffffff 0%, #f9fafb 100%);
+  border-radius: 15px;
+  padding: 30px;
+  border-left: 4px solid #dc2626;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.projet-list-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(220, 38, 38, 0.05), transparent);
+  transition: width 0.4s ease;
+}
+
+.projet-list-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 12px 35px rgba(220, 38, 38, 0.15);
+  border-left-width: 6px;
+}
+
+.projet-list-item:hover::before {
+  width: 100%;
+}
+
+.projet-list-icon {
+  flex-shrink: 0;
+  position: relative;
+  padding-top: 5px;
+}
+
+.projet-list-dot {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.2);
+  transition: all 0.4s ease;
+}
+
+.projet-list-item:hover .projet-list-dot {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 6px rgba(220, 38, 38, 0.3);
+}
+
+.projet-list-content {
+  flex: 1;
+}
+
+.projet-list-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 10px 0;
+  line-height: 1.5;
+}
+
+.projet-list-description {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .projets-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projets-internationaux {
+    padding: 70px 0;
+  }
+
+  .projets-main-title {
+    font-size: 32px;
+  }
+
+  .projets-section-title {
+    font-size: 26px;
+  }
+
+  .projet-block {
+    padding: 35px 30px;
+    margin-bottom: 60px;
+  }
+
+  .projet-title {
+    font-size: 24px;
+  }
+
+  .projets-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .projet-list-item {
+    padding: 25px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projets-badge {
+    font-size: 10px;
+    padding: 8px 20px;
+  }
+
+  .projets-main-title {
+    font-size: 26px;
+  }
+
+  .projets-section-title {
+    font-size: 22px;
+    padding-left: 15px;
+  }
+
+  .projet-block {
+    padding: 25px 20px;
+  }
+
+  .projet-title {
+    font-size: 20px;
+  }
+
+  .projet-card {
+    padding: 25px 20px;
+  }
+
+  .projet-card-title {
+    font-size: 16px;
+  }
+
+  .projet-list-item {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .projet-list-title {
+    font-size: 16px;
+  }
+
+  .projet-list-description {
+    font-size: 14px;
+  }
+}
+/* Container des axes routiers */
+.axes-routiers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Carte d'axe routier */
+.axe-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  border-left: 5px solid #dc2626;
+  position: relative;
+}
+
+.axe-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(220, 38, 38, 0.03), transparent);
+  transition: width 0.4s ease;
+  z-index: 0;
+}
+
+.axe-card:hover {
+  transform: translateX(8px);
+  box-shadow: 0 15px 45px rgba(220, 38, 38, 0.2);
+  border-color: #dc2626;
+  border-left-width: 8px;
+}
+
+.axe-card:hover::before {
+  width: 100%;
+}
+
+/* Contenu de la carte */
+.axe-card-content {
+  padding: 35px 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.axe-card-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.axe-card:hover .axe-card-title {
+  color: #dc2626;
+}
+
+.axe-card-description {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+/* Footer de la carte */
+.axe-card-footer {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Box de valeur */
+.axe-value-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.axe-card:hover .axe-value-box {
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  transform: scale(1.05);
+}
+
+.axe-value-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #9ca3af;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.axe-card:hover .axe-value-label {
+  color: #ffffff;
+}
+
+.axe-value-amount {
+  font-size: 20px;
+  font-weight: 900;
+  color: #dc2626;
+  letter-spacing: -0.5px;
+}
+
+.axe-card:hover .axe-value-amount {
+  color: #ffffff;
+}
+
+/* Badge de distance */
+.axe-distance-badge {
+  font-size: 16px;
+  font-weight: 700;
+  color: #dc2626;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(220, 38, 38, 0.05));
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 2px solid rgba(220, 38, 38, 0.2);
+  transition: all 0.3s ease;
+}
+
+.axe-card:hover .axe-distance-badge {
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  border-color: #dc2626;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .axe-card-content {
+    padding: 25px;
+  }
+
+  .axe-card-title {
+    font-size: 17px;
+  }
+
+  .axe-card-description {
+    font-size: 15px;
+  }
+
+  .axe-value-amount {
+    font-size: 18px;
+  }
+
+  .axe-distance-badge {
+    font-size: 15px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .axe-card-content {
+    padding: 20px;
+  }
+
+  .axe-card-title {
+    font-size: 16px;
+  }
+
+  .axe-card-description {
+    font-size: 14px;
+  }
+
+  .axe-value-box {
+    padding: 10px 16px;
+  }
+
+  .axe-value-amount {
+    font-size: 16px;
+  }
+
+  .axe-distance-badge {
+    font-size: 14px;
+    padding: 7px 14px;
+  }
+}
+

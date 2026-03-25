@@ -1,0 +1,1170 @@
+/* ============================================================
+   NOUSREJOINDRE.CSS — Design Moderne : Rouge / Noir / Blanc / Gris
+   Hero : extrait du fichier CSS joint
+   ============================================================ */
+
+/* --- VARIABLES --- */
+:root {
+  /* Variables SNTP (nécessaires pour le Hero du fichier joint) */
+  --sntp-red-darker: #5A000D;
+  --sntp-red-dark: #810012;
+  --sntp-red: #C1121F;
+  --sntp-red-light: #D32F2F;
+  --sntp-red-lighter: #fa2626;
+  --sntp-red-lightest: #FFEBEE;
+  --sntp-black: #000000;
+  --sntp-gray-darkest: #1f2023;
+  --sntp-gray-dark: #6d6f71;
+  --sntp-gray: #acb4bd;
+  --sntp-gray-light: #B0C4DE;
+  --sntp-gray-lighter: #E0E1DD;
+  --sntp-gray-lightest: #F5F5F5;
+  --sntp-white: #FFFFFF;
+  --sntp-white-soft: #FAFAFA;
+  --primary-red: var(--sntp-red);
+  --dark-red: var(--sntp-red-dark);
+  --black: var(--sntp-black);
+  --dark-gray: var(--sntp-gray-darkest);
+  --medium-gray: var(--sntp-gray);
+  --light-gray: var(--sntp-gray-lightest);
+  --white: var(--sntp-white);
+  --shadow-light: rgba(13, 27, 42, 0.1);
+  --shadow-medium: rgba(13, 27, 42, 0.15);
+  --shadow-heavy: rgba(13, 27, 42, 0.25);
+  --red-shadow: rgba(193, 18, 31, 0.3);
+  --success-green: #28A745;
+  --error-red: #FF4444;
+
+  /* Variables modernes (utilisées par le reste) */
+  --nr-rouge: #c0392b;
+  --nr-rouge-dark: #96281b;
+  --nr-rouge-light: #e74c3c;
+  --nr-noir: #0d0d0d;
+  --nr-noir-soft: #1a1a1a;
+  --nr-gris-dark: #2c2c2c;
+  --nr-gris-mid: #555555;
+  --nr-gris: #888888;
+  --nr-gris-light: #d0d0d0;
+  --nr-gris-xlight: #f2f2f2;
+  --nr-blanc: #ffffff;
+  --nr-radius: 4px;
+  --nr-radius-lg: 8px;
+  --nr-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --nr-shadow-hover: 0 8px 32px rgba(192, 57, 43, 0.25);
+  --nr-transition: 0.3s ease;
+  --nr-font: 'Segoe UI', 'Arial', sans-serif;
+}
+
+/* ============================================================
+   PAGE WRAPPER
+   ============================================================ */
+.NousRejoindre-page {
+  font-family: var(--nr-font);
+  background-color: var(--nr-blanc);
+  color: var(--nr-noir);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ============================================================
+   CONTAINER
+   ============================================================ */
+.NousRejoindre-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================================
+   HERO SECTION — EXTRAIT DU FICHIER CSS JOINT
+   ============================================================ */
+.NousRejoindre-hero-section {
+  position: relative;
+  height: 90vh;
+  min-height: 650px;
+  max-height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.NousRejoindre-hero-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.NousRejoindre-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.6) saturate(1.1);
+}
+
+.NousRejoindre-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(61, 63, 65, 0.65) 50%,
+    rgba(193, 18, 31, 0.3) 100%
+  );
+  z-index: 1;
+}
+
+.NousRejoindre-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 30px;
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.NousRejoindre-hero-badge {
+  display: inline-block;
+  padding: 10px 28px;
+  background: rgba(193, 18, 31, 0.95);
+  color: var(--sntp-white);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(193, 18, 31, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.NousRejoindre-hero-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: var(--sntp-white);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1.1;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.NousRejoindre-hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  line-height: 1.7;
+  font-weight: 300;
+  max-width: 650px;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+.NousRejoindre-hero-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 40px;
+  background-color: var(--sntp-white);
+  color: var(--sntp-red);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 15px;
+  border: 2px solid transparent;
+}
+
+.NousRejoindre-hero-cta-button:hover {
+  background-color: transparent;
+  color: var(--sntp-white);
+  border-color: var(--sntp-white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(255, 255, 255, 0.3);
+}
+
+.NousRejoindre-arrow-icon {
+  flex-shrink: 0;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.NousRejoindre-hero-cta-button:hover .NousRejoindre-arrow-icon,
+.NousRejoindre-offers-button:hover .NousRejoindre-arrow-icon {
+  transform: translateX(5px);
+}
+
+/* ============================================================
+   SECTION TITLES & DIVIDER
+   ============================================================ */
+.NousRejoindre-section-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: var(--nr-noir);
+  text-align: center;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.NousRejoindre-section-divider {
+  width: 56px;
+  height: 4px;
+  background: var(--nr-rouge);
+  margin: 0 auto 16px;
+}
+
+.NousRejoindre-section-subtitle {
+  text-align: center;
+  color: var(--nr-gris-mid);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0 auto 56px;
+  max-width: 680px;
+}
+
+/* ============================================================
+   TRAVAILLEZ CHEZ SNTP
+   ============================================================ */
+.NousRejoindre-work-at-sntp-section {
+  padding: 96px 0;
+  background: var(--nr-blanc);
+}
+
+.NousRejoindre-work-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.NousRejoindre-work-intro {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--nr-gris-dark);
+  margin: 0 0 28px 0;
+}
+
+.NousRejoindre-work-intro strong {
+  color: var(--nr-rouge);
+  font-weight: 700;
+}
+
+.NousRejoindre-work-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 0 28px 0;
+}
+
+.NousRejoindre-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--nr-gris-dark);
+}
+
+.NousRejoindre-check-icon {
+  color: var(--nr-rouge);
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.NousRejoindre-work-description {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--nr-gris-mid);
+  margin: 0;
+}
+
+/* Stats */
+.NousRejoindre-work-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.NousRejoindre-stat-card {
+  background: var(--nr-gris-xlight);
+  border: 1px solid var(--nr-gris-light);
+  border-top: 4px solid var(--nr-rouge);
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform var(--nr-transition), box-shadow var(--nr-transition), border-color var(--nr-transition);
+  cursor: default;
+}
+
+.NousRejoindre-stat-card:hover {
+  box-shadow: var(--nr-shadow-hover);
+  border-top-color: var(--nr-rouge-dark);
+}
+
+.NousRejoindre-stat-number {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--nr-rouge);
+  line-height: 1;
+  margin: 0 0 8px 0;
+}
+
+.NousRejoindre-stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--nr-gris-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ============================================================
+   PROFILS DE POSTES
+   ============================================================ */
+.NousRejoindre-job-profiles-section {
+  padding: 96px 0;
+  background: var(--nr-gris-xlight);
+}
+
+.NousRejoindre-profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.NousRejoindre-profile-card {
+  background: var(--nr-blanc);
+  border: 1px solid var(--nr-gris-light);
+  border-bottom: 4px solid transparent;
+  padding: 36px 24px;
+  text-align: center;
+  transition: border-color var(--nr-transition), box-shadow var(--nr-transition), transform var(--nr-transition);
+}
+
+.NousRejoindre-profile-card:hover {
+  border-bottom-color: var(--nr-rouge);
+  box-shadow: var(--nr-shadow);
+  transform: translateY(-4px);
+}
+
+.NousRejoindre-profile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  background: var(--nr-gris-xlight);
+  border: 2px solid var(--nr-gris-light);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  color: var(--nr-rouge);
+  transition: background var(--nr-transition), border-color var(--nr-transition);
+}
+
+.NousRejoindre-profile-card:hover .NousRejoindre-profile-icon {
+  background: var(--nr-rouge);
+  border-color: var(--nr-rouge);
+  color: var(--nr-blanc);
+}
+
+.NousRejoindre-profile-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--nr-noir);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+}
+
+.NousRejoindre-profile-description {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--nr-gris-mid);
+  margin: 0 0 20px 0;
+}
+
+.NousRejoindre-profile-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.NousRejoindre-skill-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--nr-rouge);
+  border: 1px solid var(--nr-rouge);
+  padding: 4px 10px;
+  transition: background var(--nr-transition), color var(--nr-transition);
+}
+
+.NousRejoindre-profile-card:hover .NousRejoindre-skill-tag {
+  background: var(--nr-rouge);
+  color: var(--nr-blanc);
+}
+
+/* ============================================================
+   POURQUOI NOUS REJOINDRE
+   ============================================================ */
+.NousRejoindre-why-join-section {
+  padding: 96px 0;
+  background: var(--nr-noir);
+}
+
+.NousRejoindre-why-join-section .NousRejoindre-section-title {
+  color: var(--nr-blanc);
+}
+
+.NousRejoindre-why-join-section .NousRejoindre-section-subtitle {
+  color: var(--nr-gris);
+}
+
+.NousRejoindre-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.NousRejoindre-why-card {
+  background: var(--nr-gris-dark);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-left: 4px solid var(--nr-rouge);
+  padding: 36px 28px;
+  transition: background var(--nr-transition), box-shadow var(--nr-transition), transform var(--nr-transition);
+}
+
+.NousRejoindre-why-card:hover {
+  background: var(--nr-noir-soft);
+  box-shadow: 0 8px 32px rgba(192, 57, 43, 0.2);
+  transform: translateY(-3px);
+}
+
+.NousRejoindre-why-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: rgba(192, 57, 43, 0.1);
+  border: 1px solid rgba(192, 57, 43, 0.3);
+  border-radius: 50%;
+  color: var(--nr-rouge-light);
+  margin: 0 0 20px 0;
+  transition: background var(--nr-transition);
+}
+
+.NousRejoindre-why-card:hover .NousRejoindre-why-icon {
+  background: var(--nr-rouge);
+  border-color: var(--nr-rouge);
+  color: var(--nr-blanc);
+}
+
+.NousRejoindre-why-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--nr-blanc);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+}
+
+.NousRejoindre-why-description {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--nr-gris);
+  margin: 0;
+}
+
+/* ============================================================
+   CANDIDATURE SPONTANÉE
+   ============================================================ */
+.NousRejoindre-spontaneous-application-section {
+  padding: 96px 0;
+  background: var(--nr-blanc);
+}
+
+.NousRejoindre-spontaneous-toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.NousRejoindre-spontaneous-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--nr-rouge);
+  color: var(--nr-blanc);
+  border: 2px solid var(--nr-rouge);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 16px 36px;
+  cursor: pointer;
+  transition: background var(--nr-transition), color var(--nr-transition), box-shadow var(--nr-transition);
+}
+
+.NousRejoindre-spontaneous-toggle-btn:hover {
+  background: var(--nr-rouge-dark);
+  box-shadow: 0 4px 16px rgba(192, 57, 43, 0.35);
+}
+
+/* Form container */
+.NousRejoindre-spontaneous-form-container {
+  overflow: hidden;
+}
+
+.NousRejoindre-spontaneous-form {
+  background: var(--nr-gris-xlight);
+  border: 1px solid var(--nr-gris-light);
+  border-top: 4px solid var(--nr-rouge);
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Alerts */
+.NousRejoindre-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  margin-bottom: 32px;
+  border-left: 4px solid;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.NousRejoindre-alert p {
+  margin: 0;
+}
+
+.NousRejoindre-alert-success {
+  background: rgba(39, 174, 96, 0.06);
+  border-color: #27ae60;
+  color: #1e8449;
+}
+
+.NousRejoindre-alert-error {
+  background: rgba(192, 57, 43, 0.06);
+  border-color: var(--nr-rouge);
+  color: var(--nr-rouge-dark);
+}
+
+/* Form rows & groups */
+.NousRejoindre-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.NousRejoindre-form-row:has(.NousRejoindre-form-group:only-child) {
+  grid-template-columns: 1fr;
+}
+
+.NousRejoindre-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.NousRejoindre-form-group label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--nr-gris-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.NousRejoindre-required {
+  color: var(--nr-rouge);
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+/* Inputs & Select & Textarea */
+.NousRejoindre-spontaneous-form input[type="text"],
+.NousRejoindre-spontaneous-form input[type="email"],
+.NousRejoindre-spontaneous-form input[type="tel"],
+.NousRejoindre-spontaneous-form select,
+.NousRejoindre-spontaneous-form textarea {
+  background: var(--nr-blanc);
+  border: 1px solid var(--nr-gris-light);
+  border-bottom: 2px solid var(--nr-gris-light);
+  color: var(--nr-noir);
+  font-size: 0.92rem;
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color var(--nr-transition), box-shadow var(--nr-transition);
+  font-family: var(--nr-font);
+  border-radius: var(--nr-radius);
+  width: 100%;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.NousRejoindre-spontaneous-form input:focus,
+.NousRejoindre-spontaneous-form select:focus,
+.NousRejoindre-spontaneous-form textarea:focus {
+  border-color: var(--nr-rouge);
+  border-bottom-color: var(--nr-rouge);
+  box-shadow: 0 2px 0 var(--nr-rouge);
+}
+
+.NousRejoindre-spontaneous-form input.NousRejoindre-error,
+.NousRejoindre-spontaneous-form select.NousRejoindre-error,
+.NousRejoindre-spontaneous-form textarea.NousRejoindre-error {
+  border-color: var(--nr-rouge-light);
+  background: rgba(231, 76, 60, 0.03);
+}
+
+.NousRejoindre-spontaneous-form select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 38px;
+  cursor: pointer;
+}
+
+.NousRejoindre-spontaneous-form textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.6;
+}
+
+.NousRejoindre-character-count {
+  font-size: 0.75rem;
+  color: var(--nr-gris);
+  text-align: right;
+  margin-top: 4px;
+}
+
+/* Error message */
+.NousRejoindre-error-message {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--nr-rouge);
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Radio group */
+.NousRejoindre-radio-group {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 10px 0;
+}
+
+.NousRejoindre-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--nr-gris-dark);
+  cursor: pointer;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.NousRejoindre-radio-label input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--nr-gris-light);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: border-color var(--nr-transition), background var(--nr-transition);
+  flex-shrink: 0;
+  position: relative;
+  padding: 0;
+  min-width: unset;
+  box-shadow: none;
+}
+
+.NousRejoindre-radio-label input[type="radio"]:checked {
+  border-color: var(--nr-rouge);
+  background: var(--nr-rouge);
+  box-shadow: inset 0 0 0 3px var(--nr-blanc);
+}
+
+/* File upload */
+.NousRejoindre-file-upload-container {
+  width: 100%;
+}
+
+.NousRejoindre-file-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px 24px;
+  border: 2px dashed var(--nr-gris-light);
+  background: var(--nr-blanc);
+  cursor: pointer;
+  transition: border-color var(--nr-transition), background var(--nr-transition);
+  color: var(--nr-gris);
+  text-align: center;
+  min-height: 160px;
+}
+
+.NousRejoindre-file-upload-label:hover,
+.NousRejoindre-file-upload-label.NousRejoindre-dragging {
+  border-color: var(--nr-rouge);
+  background: rgba(192, 57, 43, 0.03);
+  color: var(--nr-rouge);
+}
+
+.NousRejoindre-file-upload-text {
+  font-size: 0.92rem;
+  color: inherit;
+}
+
+.NousRejoindre-file-upload-text strong {
+  color: var(--nr-rouge);
+}
+
+.NousRejoindre-file-upload-hint {
+  font-size: 0.78rem;
+  color: var(--nr-gris);
+}
+
+.NousRejoindre-file-selected {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--nr-blanc);
+  border: 1px solid var(--nr-gris-light);
+  border-left: 4px solid var(--nr-rouge);
+}
+
+.NousRejoindre-file-selected svg {
+  color: var(--nr-rouge);
+  flex-shrink: 0;
+}
+
+.NousRejoindre-file-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.NousRejoindre-file-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--nr-noir);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.NousRejoindre-file-size {
+  font-size: 0.78rem;
+  color: var(--nr-gris);
+  margin-top: 2px;
+}
+
+.NousRejoindre-file-remove-btn {
+  background: none;
+  border: 1px solid var(--nr-gris-light);
+  color: var(--nr-gris-mid);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  transition: background var(--nr-transition), color var(--nr-transition), border-color var(--nr-transition);
+  border-radius: var(--nr-radius);
+}
+
+.NousRejoindre-file-remove-btn:hover {
+  background: var(--nr-rouge);
+  color: var(--nr-blanc);
+  border-color: var(--nr-rouge);
+}
+
+/* Privacy policy */
+.NousRejoindre-privacy-policy-group {
+  margin-top: 8px;
+  margin-bottom: 32px;
+}
+
+.NousRejoindre-privacy-policy-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.NousRejoindre-privacy-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border: 2px solid var(--nr-gris-light);
+  border-radius: var(--nr-radius);
+  cursor: pointer;
+  transition: background var(--nr-transition), border-color var(--nr-transition);
+  margin-top: 2px;
+  position: relative;
+}
+
+.NousRejoindre-privacy-checkbox:checked {
+  background: var(--nr-rouge);
+  border-color: var(--nr-rouge);
+}
+
+.NousRejoindre-privacy-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 10px;
+  border: 2px solid var(--nr-blanc);
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.NousRejoindre-privacy-text {
+  font-size: 0.85rem;
+  color: var(--nr-gris-mid);
+  line-height: 1.6;
+}
+
+.NousRejoindre-privacy-link {
+  color: var(--nr-rouge);
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color var(--nr-transition);
+}
+
+.NousRejoindre-privacy-link:hover {
+  color: var(--nr-rouge-dark);
+}
+
+/* Form actions */
+.NousRejoindre-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.NousRejoindre-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--nr-rouge);
+  color: var(--nr-blanc);
+  border: 2px solid var(--nr-rouge);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 16px 40px;
+  cursor: pointer;
+  transition: background var(--nr-transition), box-shadow var(--nr-transition), transform var(--nr-transition);
+  border-radius: var(--nr-radius);
+}
+
+.NousRejoindre-submit-btn:hover:not(:disabled) {
+  background: var(--nr-rouge-dark);
+  box-shadow: 0 4px 16px rgba(192, 57, 43, 0.4);
+  transform: translateY(-1px);
+}
+
+.NousRejoindre-submit-btn.NousRejoindre-disabled,
+.NousRejoindre-submit-btn:disabled {
+  background: var(--nr-gris-light);
+  border-color: var(--nr-gris-light);
+  color: var(--nr-gris);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Spinner */
+.NousRejoindre-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: var(--nr-blanc);
+  border-radius: 50%;
+  animation: nr-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes nr-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   OFFRES D'EMPLOI
+   ============================================================ */
+.NousRejoindre-job-offers-section {
+  padding: 96px 0;
+  background: var(--nr-noir);
+}
+
+.NousRejoindre-offers-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.NousRejoindre-offers-icon {
+  color: var(--nr-rouge);
+  margin-bottom: 24px;
+}
+
+.NousRejoindre-offers-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: var(--nr-blanc);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px 0;
+}
+
+.NousRejoindre-offers-title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 4px;
+  background: var(--nr-rouge);
+  margin: 14px auto 0;
+}
+
+.NousRejoindre-offers-description {
+  font-size: 1rem;
+  color: var(--nr-gris);
+  line-height: 1.7;
+  margin: 0 0 40px 0;
+}
+
+.NousRejoindre-offers-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--nr-rouge);
+  color: var(--nr-blanc);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 16px 36px;
+  border: 2px solid var(--nr-rouge);
+  transition: background var(--nr-transition), color var(--nr-transition), border-color var(--nr-transition), box-shadow var(--nr-transition);
+}
+
+.NousRejoindre-offers-button:hover {
+  background: transparent;
+  color: var(--nr-rouge-light);
+  border-color: var(--nr-rouge-light);
+  box-shadow: 0 0 24px rgba(192, 57, 43, 0.3);
+}
+
+/* ============================================================
+   GLOBAL EXTRAS
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--sntp-red);
+  color: var(--sntp-white);
+}
+
+::-moz-selection {
+  background-color: var(--sntp-red);
+  color: var(--sntp-white);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--sntp-red);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET
+   ============================================================ */
+@media (max-width: 1024px) {
+  .NousRejoindre-hero-section {
+    height: 85vh;
+    min-height: 600px;
+  }
+
+  .NousRejoindre-hero-title {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+  }
+
+  .NousRejoindre-hero-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .NousRejoindre-profiles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .NousRejoindre-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .NousRejoindre-work-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .NousRejoindre-work-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+  .NousRejoindre-hero-section {
+    height: 80vh;
+    min-height: 550px;
+  }
+
+  .NousRejoindre-hero-badge {
+    font-size: 0.75rem;
+    padding: 8px 22px;
+    letter-spacing: 2px;
+  }
+
+  .NousRejoindre-hero-title {
+    font-size: 2.5rem;
+    letter-spacing: 1.5px;
+  }
+
+  .NousRejoindre-hero-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .NousRejoindre-hero-cta-button {
+    padding: 14px 32px;
+    font-size: 0.85rem;
+  }
+
+  .NousRejoindre-work-at-sntp-section,
+  .NousRejoindre-job-profiles-section,
+  .NousRejoindre-why-join-section,
+  .NousRejoindre-spontaneous-application-section,
+  .NousRejoindre-job-offers-section {
+    padding: 64px 0;
+  }
+
+  .NousRejoindre-profiles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .NousRejoindre-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .NousRejoindre-work-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .NousRejoindre-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .NousRejoindre-spontaneous-form {
+    padding: 28px 20px;
+  }
+
+  .NousRejoindre-form-actions {
+    justify-content: stretch;
+  }
+
+  .NousRejoindre-submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .NousRejoindre-spontaneous-toggle-btn,
+  .NousRejoindre-offers-button {
+    padding: 14px 24px;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .NousRejoindre-hero-section {
+    height: 75vh;
+    min-height: 500px;
+  }
+
+  .NousRejoindre-hero-content {
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  .NousRejoindre-hero-badge {
+    font-size: 0.7rem;
+    padding: 7px 18px;
+    letter-spacing: 1.5px;
+  }
+
+  .NousRejoindre-hero-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .NousRejoindre-hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .NousRejoindre-hero-cta-button {
+    padding: 12px 28px;
+    font-size: 0.8rem;
+    gap: 10px;
+  }
+
+  .NousRejoindre-work-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .NousRejoindre-radio-group {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}

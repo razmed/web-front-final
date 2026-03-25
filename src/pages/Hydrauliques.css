@@ -1,0 +1,897 @@
+/* ====================
+   HYDRAULIQUES SNTP - DESIGN PREMIUM
+   Qualification Catégorie 9
+==================== */
+
+:root {
+  /* Palette SNTP Premium */
+  --sntp-red: #C1121F;
+  --sntp-red-dark: #810012;
+  --sntp-red-darker: #5A000D;
+  --sntp-black: #0A0A0A;
+  --sntp-gray-darkest: #1A1A1A;
+  --sntp-gray-dark: #2D2D2D;
+  --sntp-gray: #4A4A4A;
+  --sntp-gray-light: #7A7A7A;
+  --sntp-gray-lighter: #BEBEBE;
+  --sntp-gray-lightest: #F2F2F2;
+  --sntp-white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Hydrauliques-page {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--sntp-gray-dark);
+  background: var(--sntp-white);
+  overflow-x: hidden;
+}
+
+/* ==================== HERO SECTION ==================== */
+.Hydrauliques-hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--sntp-white);
+  overflow: hidden;
+}
+
+.Hydrauliques-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.92) 0%, rgba(193, 18, 31, 0.25) 100%);
+  z-index: 1;
+}
+
+.Hydrauliques-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at top left, rgba(193, 18, 31, 0.2), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(129, 0, 18, 0.15), transparent 60%);
+  z-index: 1;
+}
+
+.Hydrauliques-hero-content {
+  position: relative;
+  max-width: 1200px;
+  z-index: 2;
+  text-align: center;
+  padding: 0 3rem;
+  animation: fadeInUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.Hydrauliques-badge {
+  display: inline-block;
+  padding: 12px 30px;
+  background: rgba(193, 18, 31, 0.9);
+  color: var(--sntp-white);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  border: 2px solid var(--sntp-white);
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.Hydrauliques-title {
+  font-size: 5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.Hydrauliques-subtitle-hero {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--sntp-gray-lighter);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.Hydrauliques-divider-hero {
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--sntp-red), transparent);
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(193, 18, 31, 0.6);
+}
+
+/* ==================== EXCELLENCE SECTION ==================== */
+.Hydrauliques-excellence-section {
+  background: linear-gradient(180deg, var(--sntp-white) 0%, var(--sntp-gray-lightest) 100%);
+  padding: 150px 0;
+  position: relative;
+}
+
+.Hydrauliques-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.Hydrauliques-label {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--sntp-red);
+  letter-spacing: 0.3em;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 50px;
+}
+
+.Hydrauliques-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 3px;
+  background: var(--sntp-red);
+}
+
+.Hydrauliques-section-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--sntp-black);
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.Hydrauliques-description-text {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: var(--sntp-gray);
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.Hydrauliques-image-wrapper {
+  position: relative;
+}
+
+.Hydrauliques-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--sntp-gray-lighter);
+}
+
+.Hydrauliques-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(193, 18, 31, 0.85), rgba(129, 0, 18, 0.9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 2;
+}
+
+.Hydrauliques-image-container:hover .Hydrauliques-image-overlay {
+  opacity: 1;
+}
+
+.Hydrauliques-overlay-text {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--sntp-white);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.Hydrauliques-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: block;
+}
+
+.Hydrauliques-image-container:hover .Hydrauliques-img {
+  transform: scale(1.1);
+}
+
+/* ==================== EXPERTISE SECTION ==================== */
+.Hydrauliques-expertise-section {
+  background: var(--sntp-black);
+  padding: 150px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.Hydrauliques-expertise-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(193, 18, 31, 0.08), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(129, 0, 18, 0.06), transparent 50%);
+  pointer-events: none;
+}
+
+.Hydrauliques-expertise-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.Hydrauliques-expertise-header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.Hydrauliques-label-white {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--sntp-red);
+  letter-spacing: 0.3em;
+  margin-bottom: 1.5rem;
+}
+
+.Hydrauliques-section-title-white {
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--sntp-white);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.Hydrauliques-divider-white {
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--sntp-red), transparent);
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(193, 18, 31, 0.5);
+}
+
+.Hydrauliques-expertise-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+}
+
+.Hydrauliques-expertise-column {
+  background: var(--sntp-gray-darkest);
+  padding: 4rem 3rem;
+  border: 1px solid var(--sntp-gray-dark);
+  border-radius: 12px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.Hydrauliques-expertise-column::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--sntp-red), var(--sntp-red-darker));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.Hydrauliques-expertise-column:hover::before {
+  transform: scaleX(1);
+}
+
+.Hydrauliques-expertise-column:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(193, 18, 31, 0.3);
+  border-color: var(--sntp-red);
+}
+
+.Hydrauliques-column-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--sntp-red), var(--sntp-red-darker));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: var(--sntp-white);
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(193, 18, 31, 0.4);
+}
+
+.Hydrauliques-column-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--sntp-white);
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+
+.Hydrauliques-expertise-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Hydrauliques-expertise-list li {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--sntp-gray-lighter);
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.Hydrauliques-expertise-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--sntp-red);
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* ==================== SERVICES SECTION ==================== */
+.Hydrauliques-services-section {
+  background: var(--sntp-white);
+  padding: 150px 0;
+}
+
+.Hydrauliques-services-header {
+  text-align: center;
+  margin-bottom: 6rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 4rem;
+}
+
+.Hydrauliques-divider-center {
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--sntp-red), transparent);
+  margin: 2rem auto 0;
+}
+
+.Hydrauliques-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.Hydrauliques-service-card {
+  background: var(--sntp-gray-lightest);
+  padding: 3.5rem 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.Hydrauliques-service-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--sntp-red), var(--sntp-red-darker));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.Hydrauliques-service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.Hydrauliques-service-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  border-color: var(--sntp-red);
+  background: var(--sntp-white);
+}
+
+.Hydrauliques-service-icon {
+  width: 85px;
+  height: 85px;
+  margin: 0 auto 2rem;
+  background: linear-gradient(135deg, var(--sntp-red), var(--sntp-red-darker));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  color: var(--sntp-white);
+  box-shadow: 0 10px 30px rgba(193, 18, 31, 0.3);
+  transition: transform 0.5s ease;
+}
+
+.Hydrauliques-service-card:hover .Hydrauliques-service-icon {
+  transform: rotateY(360deg) scale(1.1);
+}
+
+.Hydrauliques-service-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--sntp-black);
+  margin-bottom: 1.2rem;
+  line-height: 1.3;
+}
+
+.Hydrauliques-service-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--sntp-gray);
+  font-weight: 400;
+}
+
+/* ==================== REALISATIONS SECTION ==================== */
+.Hydrauliques-realisations-section {
+  background: linear-gradient(135deg, var(--sntp-gray-darkest) 0%, var(--sntp-black) 100%);
+  padding: 150px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.Hydrauliques-realisations-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(193, 18, 31, 0.1), transparent 70%);
+  border-radius: 50%;
+}
+
+.Hydrauliques-realisations-header {
+  text-align: center;
+  margin-bottom: 6rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.Hydrauliques-realisations-subtitle {
+  font-size: 1.2rem;
+  color: var(--sntp-gray-lighter);
+  margin-top: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.Hydrauliques-realisations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.Hydrauliques-realisation-card {
+  background: var(--sntp-gray-darkest);
+  padding: 4rem 3rem;
+  border: 2px solid var(--sntp-gray-dark);
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.Hydrauliques-realisation-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(193, 18, 31, 0.1), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.Hydrauliques-realisation-card:hover::before {
+  opacity: 1;
+}
+
+.Hydrauliques-realisation-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(193, 18, 31, 0.4);
+  border-color: var(--sntp-red);
+}
+
+.Hydrauliques-realisation-icon {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 2rem;
+  background: linear-gradient(135deg, var(--sntp-red), var(--sntp-red-darker));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+  color: var(--sntp-white);
+  box-shadow: 0 12px 35px rgba(193, 18, 31, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.Hydrauliques-realisation-location {
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--sntp-red);
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+}
+
+.Hydrauliques-realisation-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--sntp-white);
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  position: relative;
+  z-index: 1;
+}
+
+.Hydrauliques-realisation-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--sntp-gray-lighter);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.Hydrauliques-realisation-badge {
+  display: inline-block;
+  padding: 10px 25px;
+  background: rgba(193, 18, 31, 0.2);
+  border: 2px solid var(--sntp-red);
+  color: var(--sntp-red);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-radius: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==================== CTA SECTION ==================== */
+.Hydrauliques-cta-section {
+  background: linear-gradient(135deg, var(--sntp-red) 0%, var(--sntp-red-darker) 100%);
+  padding: 140px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.Hydrauliques-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at top left, rgba(255, 255, 255, 0.1), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.2), transparent 60%);
+  z-index: 1;
+}
+
+.Hydrauliques-cta-content {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  padding: 0 4rem;
+}
+
+.Hydrauliques-cta-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 2.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 3px solid var(--sntp-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: var(--sntp-white);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.Hydrauliques-cta-title {
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: var(--sntp-white);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.Hydrauliques-cta-description {
+  font-size: 1.3rem;
+  line-height: 2;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 3.5rem;
+  font-weight: 300;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Hydrauliques-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding: 22px 50px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  letter-spacing: 0.15em;
+  background-color: var(--sntp-white);
+  color: var(--sntp-red);
+  border: 3px solid var(--sntp-white);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.Hydrauliques-cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--sntp-red-darker);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.Hydrauliques-cta-btn:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.Hydrauliques-cta-btn:hover {
+  color: var(--sntp-white);
+  transform: translateY(-5px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.4);
+}
+
+.Hydrauliques-cta-arrow {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.Hydrauliques-cta-btn:hover .Hydrauliques-cta-arrow {
+  transform: translateX(8px);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1200px) {
+  .Hydrauliques-content-grid {
+    gap: 5rem;
+    padding: 0 3rem;
+  }
+
+  .Hydrauliques-expertise-columns {
+    gap: 4rem;
+  }
+
+  .Hydrauliques-services-grid,
+  .Hydrauliques-realisations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .Hydrauliques-title {
+    font-size: 3.5rem;
+  }
+
+  .Hydrauliques-section-title,
+  .Hydrauliques-section-title-white {
+    font-size: 2.8rem;
+  }
+
+  .Hydrauliques-content-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .Hydrauliques-image-wrapper {
+    order: -1;
+  }
+
+  .Hydrauliques-expertise-columns {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .Hydrauliques-hero {
+    min-height: 70vh;
+  }
+
+  .Hydrauliques-title {
+    font-size: 2.5rem;
+  }
+
+  .Hydrauliques-subtitle-hero {
+    font-size: 1.1rem;
+  }
+
+  .Hydrauliques-section-title,
+  .Hydrauliques-section-title-white {
+    font-size: 2.2rem;
+  }
+
+  .Hydrauliques-cta-title {
+    font-size: 3rem;
+  }
+
+  .Hydrauliques-services-grid,
+  .Hydrauliques-realisations-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .Hydrauliques-excellence-section,
+  .Hydrauliques-expertise-section,
+  .Hydrauliques-services-section,
+  .Hydrauliques-realisations-section,
+  .Hydrauliques-cta-section {
+    padding: 100px 0;
+  }
+
+  .Hydrauliques-content-grid,
+  .Hydrauliques-expertise-container,
+  .Hydrauliques-services-header,
+  .Hydrauliques-services-grid,
+  .Hydrauliques-realisations-header,
+  .Hydrauliques-realisations-grid,
+  .Hydrauliques-cta-content {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .Hydrauliques-title {
+    font-size: 2rem;
+  }
+
+  .Hydrauliques-subtitle-hero {
+    font-size: 0.95rem;
+  }
+
+  .Hydrauliques-badge {
+    font-size: 0.65rem;
+    padding: 10px 20px;
+  }
+
+  .Hydrauliques-section-title,
+  .Hydrauliques-section-title-white {
+    font-size: 1.8rem;
+  }
+
+  .Hydrauliques-cta-title {
+    font-size: 2.2rem;
+  }
+
+  .Hydrauliques-excellence-section,
+  .Hydrauliques-expertise-section,
+  .Hydrauliques-services-section,
+  .Hydrauliques-realisations-section,
+  .Hydrauliques-cta-section {
+    padding: 80px 0;
+  }
+
+  .Hydrauliques-expertise-column {
+    padding: 3rem 2rem;
+  }
+
+  .Hydrauliques-service-card {
+    padding: 2.5rem 2rem;
+  }
+
+  .Hydrauliques-realisation-card {
+    padding: 3rem 2rem;
+  }
+}
+
+/* ==================== UTILITIES ==================== */
+::selection {
+  background-color: var(--sntp-red);
+  color: var(--sntp-white);
+}
+
+*:focus-visible {
+  outline: 3px solid var(--sntp-red);
+  outline-offset: 4px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}

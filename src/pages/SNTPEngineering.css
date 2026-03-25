@@ -1,0 +1,3587 @@
+/* =====================================================
+   SNTP ENGINEERING — CSS MODERNE
+   Direction : Industrial Editorial
+   Palette   : Rouge · Noir · Blanc · Gris
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* ==================== VARIABLES ==================== */
+:root {
+  /* Palette stricte */
+  --c-black:       #0A0A0A;
+  --c-black-soft:  #141414;
+  --c-dark:        #1E1E1E;
+  --c-charcoal:    #2C2C2C;
+  --c-gray-dark:   #4A4A4A;
+  --c-gray:        #767676;
+  --c-gray-mid:    #A0A0A0;
+  --c-gray-light:  #C8C8C8;
+  --c-gray-pale:   #E8E8E8;
+  --c-off-white:   #F4F4F4;
+  --c-white:       #FFFFFF;
+  --c-red:         #C8102E;
+  --c-red-deep:    #8B0A1E;
+  --c-red-glow:    rgba(200, 16, 46, 0.15);
+
+  /* Typographie */
+  --font-display:  'Bebas Neue', 'Impact', 'Arial Black', sans-serif;
+  --font-body:     'DM Sans', 'Segoe UI', 'Helvetica Neue', sans-serif;
+
+  /* Espacements */
+  --space-xs:  6px;
+  --space-sm:  12px;
+  --space-md:  24px;
+  --space-lg:  40px;
+  --space-xl:  56px;
+  --space-2xl: 72px;
+
+  /* Ombres */
+  --shadow-sm:    0 2px 8px rgba(0,0,0,0.12);
+  --shadow-md:    0 8px 32px rgba(0,0,0,0.18);
+  --shadow-lg:    0 20px 60px rgba(0,0,0,0.28);
+  --shadow-red:   0 8px 32px rgba(200,16,46,0.25);
+
+  /* Transitions */
+  --ease:         cubic-bezier(0.4, 0, 0.2, 1);
+  --t-fast:       0.2s var(--ease);
+  --t-base:       0.35s var(--ease);
+  --t-slow:       0.6s var(--ease);
+}
+
+/* ==================== RESET ==================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+::selection {
+  background: var(--c-red);
+  color: var(--c-white);
+}
+
+/* ==================== PAGE & CONTAINER ==================== */
+.SNTPEngineering-page {
+  font-family: var(--font-body);
+  color: var(--c-charcoal);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background: var(--c-white);
+  max-width: 100vw;
+}
+
+.SNTPEngineering-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* ==================== HERO ==================== */
+.SNTPEngineering-hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  padding: 70px 20px 50px;
+  overflow: hidden;
+}
+
+.SNTPEngineering-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      160deg,
+      rgba(10,10,10,0.96) 0%,
+      rgba(20,20,20,0.88) 50%,
+      rgba(10,10,10,0.80) 100%
+    );
+  z-index: 1;
+}
+
+/* Ligne décorative verticale */
+.SNTPEngineering-hero-overlay::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--c-red), transparent);
+  opacity: 0.3;
+  transform: translateX(-50%);
+}
+
+.SNTPEngineering-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: heroFadeUp 1s var(--ease) both;
+}
+
+.SNTPEngineering-hero-logo {
+  margin-bottom: var(--space-lg);
+  animation: zoomIn 0.8s var(--ease) 0.2s both;
+}
+
+.SNTPEngineering-hero-logo img {
+  max-width: 180px;
+  height: auto;
+  filter: brightness(0) invert(1) drop-shadow(0 4px 16px rgba(200,16,46,0.4));
+}
+
+.SNTPEngineering-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 9vw, 7.5rem);
+  font-weight: 400; /* Bebas Neue is already bold by default */
+  color: var(--c-white);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin-bottom: var(--space-md);
+  text-shadow: 0 0 80px rgba(200,16,46,0.2);
+}
+
+.SNTPEngineering-hero-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  color: var(--c-gray-light);
+  margin-bottom: var(--space-md);
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.SNTPEngineering-hero-subtitle .highlight-text {
+  color: var(--c-red);
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.SNTPEngineering-hero-description {
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  color: rgba(255,255,255,0.72);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.85;
+  font-weight: 300;
+}
+
+.SNTPEngineering-hero-description .bold-text {
+  font-weight: 600;
+  color: var(--c-white);
+}
+
+/* ==================== MAIN TITLE SECTION ==================== */
+.SNTPEngineering-main-title-section {
+  padding: var(--space-xl) 20px var(--space-lg);
+  background: var(--c-black);
+  text-align: center;
+  border-bottom: 1px solid rgba(200,16,46,0.2);
+  position: relative;
+}
+
+.SNTPEngineering-main-title-section::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--c-red);
+}
+
+.SNTPEngineering-section-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--c-red);
+  margin-bottom: var(--space-sm);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.SNTPEngineering-section-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  color: var(--c-white);
+  margin-bottom: var(--space-md);
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+.SNTPEngineering-title-underline {
+  width: 48px;
+  height: 2px;
+  background: var(--c-red);
+  margin: 0 auto var(--space-md);
+}
+
+.SNTPEngineering-section-intro-text {
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  color: var(--c-gray-mid);
+  max-width: 750px;
+  margin: 0 auto;
+  font-style: italic;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* ==================== DOMAINS SECTION ==================== */
+.SNTPEngineering-domains-section {
+  padding: var(--space-xl) 20px;
+  background: var(--c-off-white);
+}
+
+.SNTPEngineering-domains-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.SNTPEngineering-domain-card {
+  background: var(--c-white);
+  padding: var(--space-lg) var(--space-md);
+  border-radius: 2px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--t-base), box-shadow var(--t-base), border-color var(--t-base);
+  border-left: 3px solid var(--c-red);
+  border-top: 1px solid var(--c-gray-pale);
+  border-right: 1px solid var(--c-gray-pale);
+  border-bottom: 1px solid var(--c-gray-pale);
+  position: relative;
+  overflow: hidden;
+}
+
+.SNTPEngineering-domain-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--c-red), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--t-base);
+}
+
+.SNTPEngineering-domain-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.SNTPEngineering-domain-card:hover::after {
+  transform: scaleX(1);
+}
+
+.SNTPEngineering-domain-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--c-red);
+  border-radius: 2px;
+  padding: 16px;
+  transition: transform var(--t-base), background var(--t-base);
+}
+
+.SNTPEngineering-domain-card:hover .SNTPEngineering-domain-icon {
+  background: var(--c-red-deep);
+  transform: rotate(-4deg) scale(1.05);
+}
+
+.SNTPEngineering-domain-icon img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0) invert(1);
+}
+
+.SNTPEngineering-domain-title {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  color: var(--c-black);
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+}
+
+.SNTPEngineering-domain-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.SNTPEngineering-domain-list li {
+  padding: 10px 0 10px 24px;
+  position: relative;
+  color: var(--c-gray-dark);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.6;
+  transition: color var(--t-fast), padding-left var(--t-fast);
+  border-bottom: 1px solid var(--c-gray-pale);
+}
+
+.SNTPEngineering-domain-list li:last-child { border-bottom: none; }
+
+.SNTPEngineering-domain-list li:hover {
+  color: var(--c-black);
+  padding-left: 30px;
+}
+
+.SNTPEngineering-domain-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--c-red);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: transform var(--t-fast);
+}
+
+.SNTPEngineering-domain-list li:hover::before {
+  transform: scaleX(1.2);
+}
+
+.SNTPEngineering-domain-innovation {
+  margin-top: var(--space-md);
+  padding: 16px 18px;
+  background: var(--c-off-white);
+  border-left: 3px solid var(--c-red);
+  font-size: 0.9rem;
+  color: var(--c-charcoal);
+}
+
+.SNTPEngineering-domain-innovation strong {
+  color: var(--c-red);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* ==================== SOLUTIONS SECTION ==================== */
+.SNTPEngineering-solutions-section {
+  padding: var(--space-2xl) 20px;
+  background: var(--c-black);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.SNTPEngineering-solutions-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 79px,
+      rgba(255,255,255,0.02) 80px
+    );
+}
+
+.SNTPEngineering-solutions-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: var(--c-white);
+  max-width: 900px;
+  margin: 0 auto var(--space-lg);
+  letter-spacing: 3px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==================== VALUES SECTION ==================== */
+.SNTPEngineering-values-section {
+  padding: var(--space-xl) 20px;
+  background: var(--c-white);
+}
+
+.SNTPEngineering-values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.SNTPEngineering-value-card {
+  padding: var(--space-lg) var(--space-md);
+  background: var(--c-off-white);
+  border-radius: 2px;
+  transition: transform var(--t-base), box-shadow var(--t-base), background var(--t-base);
+  border-top: 3px solid var(--c-gray-pale);
+  position: relative;
+  overflow: hidden;
+}
+
+.SNTPEngineering-value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--c-red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--t-base);
+}
+
+.SNTPEngineering-value-card:hover::before { transform: scaleX(1); }
+
+.SNTPEngineering-value-card:hover {
+  background: var(--c-white);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-6px);
+}
+
+.SNTPEngineering-value-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  color: var(--c-black);
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
+}
+
+.SNTPEngineering-value-description {
+  font-size: 0.95rem;
+  color: var(--c-gray-dark);
+  line-height: 1.8;
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* ==================== TRANSFORM SECTION ==================== */
+.SNTPEngineering-transform-section {
+  padding: var(--space-2xl) 20px;
+  background: var(--c-black-soft);
+  text-align: center;
+  position: relative;
+}
+
+.SNTPEngineering-transform-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--c-red), transparent);
+}
+
+.SNTPEngineering-transform-subtitle {
+  font-size: 0.8rem;
+  color: var(--c-red);
+  margin-bottom: var(--space-sm);
+  font-weight: 600;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.SNTPEngineering-transform-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--c-white);
+  margin-bottom: var(--space-md);
+  letter-spacing: 4px;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.SNTPEngineering-transform-description {
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  color: var(--c-gray-mid);
+  max-width: 800px;
+  margin: 0 auto var(--space-lg);
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+.SNTPEngineering-transform-description strong {
+  color: var(--c-white);
+  font-weight: 600;
+}
+
+/* ==================== TEAM SECTION ==================== */
+.SNTPEngineering-team-section {
+  padding: var(--space-xl) 20px;
+  background: var(--c-white);
+}
+
+.SNTPEngineering-team-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: var(--space-xl);
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.SNTPEngineering-team-text { padding: var(--space-md); }
+
+.SNTPEngineering-team-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: var(--c-black);
+  margin-bottom: var(--space-md);
+  letter-spacing: 3px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.SNTPEngineering-team-description {
+  font-size: 1rem;
+  color: var(--c-gray-dark);
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+.SNTPEngineering-team-description strong {
+  color: var(--c-black);
+  font-weight: 600;
+}
+
+.SNTPEngineering-team-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--c-red);
+}
+
+.SNTPEngineering-team-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(200,16,46,0.08) 100%);
+  opacity: 0;
+  transition: opacity var(--t-base);
+}
+
+.SNTPEngineering-team-image:hover::after { opacity: 1; }
+
+.SNTPEngineering-team-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform var(--t-slow);
+  filter: grayscale(20%);
+}
+
+.SNTPEngineering-team-image:hover img {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+
+/* ==================== ENGINEERS SECTION ==================== */
+.SNTPEngineering-engineers-section {
+  padding: var(--space-2xl) 20px;
+  background: var(--c-dark);
+  position: relative;
+}
+
+.SNTPEngineering-engineers-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(255,255,255,0.015) 40px
+    );
+  pointer-events: none;
+}
+
+.SNTPEngineering-engineers-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: var(--space-xl);
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-engineers-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid rgba(200,16,46,0.4);
+}
+
+.SNTPEngineering-engineers-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent, rgba(200,16,46,0.12));
+  opacity: 0;
+  transition: opacity var(--t-base);
+}
+
+.SNTPEngineering-engineers-image:hover::after { opacity: 1; }
+
+.SNTPEngineering-engineers-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(30%);
+  transition: transform var(--t-slow), filter var(--t-base);
+}
+
+.SNTPEngineering-engineers-image:hover img {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+
+.SNTPEngineering-engineers-info { padding: var(--space-md); color: var(--c-white); }
+
+.SNTPEngineering-engineers-badge {
+  display: inline-block;
+  background: var(--c-red);
+  color: var(--c-white);
+  padding: 8px 24px;
+  border-radius: 1px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+  transition: background var(--t-fast), transform var(--t-fast);
+}
+
+.SNTPEngineering-engineers-badge:hover {
+  background: var(--c-red-deep);
+  transform: translateY(-2px);
+}
+
+.SNTPEngineering-engineers-quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: var(--space-md);
+  line-height: 1.8;
+  color: var(--c-gray-light);
+  font-weight: 300;
+  border-left: 2px solid var(--c-red);
+  padding-left: var(--space-md);
+}
+
+.SNTPEngineering-engineers-subtitle {
+  font-size: 0.75rem;
+  color: var(--c-red);
+  margin-bottom: var(--space-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.SNTPEngineering-engineers-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  color: var(--c-white);
+  margin-bottom: var(--space-md);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.SNTPEngineering-engineers-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--space-md);
+}
+
+.SNTPEngineering-engineers-list li {
+  padding: 12px 0 12px 28px;
+  position: relative;
+  font-size: 1rem;
+  color: var(--c-gray-light);
+  font-weight: 400;
+  transition: color var(--t-fast), padding-left var(--t-fast);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.SNTPEngineering-engineers-list li:last-child { border-bottom: none; }
+
+.SNTPEngineering-engineers-list li:hover {
+  padding-left: 34px;
+  color: var(--c-white);
+}
+
+.SNTPEngineering-engineers-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--c-red);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: transform var(--t-fast);
+}
+
+.SNTPEngineering-engineers-list li:hover::before { transform: scale(1.15); }
+
+/* ==================== CONTACT SECTION ==================== */
+.SNTPEngineering-contact-section {
+  padding: var(--space-xl) 20px;
+  background: var(--c-off-white);
+  text-align: center;
+}
+
+.SNTPEngineering-contact-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: var(--c-black);
+  margin-bottom: var(--space-xl);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.SNTPEngineering-contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.SNTPEngineering-contact-map-container {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--c-red);
+}
+
+.SNTPEngineering-google-map {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(100%) contrast(0.9);
+  transition: filter var(--t-slow);
+}
+
+.SNTPEngineering-contact-map-container:hover .SNTPEngineering-google-map {
+  filter: grayscale(30%) contrast(1);
+}
+
+.SNTPEngineering-contact-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  text-align: left;
+}
+
+.SNTPEngineering-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.SNTPEngineering-contact-item {
+  background: var(--c-white);
+  padding: var(--space-md);
+  border-radius: 2px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--t-fast), box-shadow var(--t-fast), border-color var(--t-fast);
+  border-left: 3px solid var(--c-red);
+}
+
+.SNTPEngineering-contact-item:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+  border-left-width: 5px;
+}
+
+.SNTPEngineering-contact-label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  color: var(--c-red);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.SNTPEngineering-contact-info {
+  font-size: 1rem;
+  color: var(--c-black);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.SNTPEngineering-contact-info a {
+  color: var(--c-black);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--t-fast);
+  position: relative;
+}
+
+.SNTPEngineering-contact-info a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--c-red);
+  transition: width var(--t-base);
+}
+
+.SNTPEngineering-contact-info a:hover { color: var(--c-red); }
+.SNTPEngineering-contact-info a:hover::after { width: 100%; }
+
+.SNTPEngineering-map-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.SNTPEngineering-map-button .button-icon { fill: currentColor; }
+
+.SNTPEngineering-contact-cta-text {
+  font-size: 0.95rem;
+  color: var(--c-gray-dark);
+  line-height: 1.9;
+  padding: var(--space-md);
+  background: var(--c-white);
+  border-radius: 2px;
+  box-shadow: var(--shadow-sm);
+  font-weight: 300;
+  border-left: 3px solid var(--c-gray-pale);
+}
+
+.SNTPEngineering-contact-cta-text strong {
+  color: var(--c-black);
+  font-weight: 700;
+}
+
+/* ==================== BUTTONS ==================== */
+.SNTPEngineering-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 40px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: transform var(--t-fast), box-shadow var(--t-fast), background var(--t-fast);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.SNTPEngineering-cta-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.12);
+  opacity: 0;
+  transition: opacity var(--t-fast);
+}
+
+.SNTPEngineering-cta-button:hover::before { opacity: 1; }
+
+.SNTPEngineering-primary-button {
+  background: var(--c-red);
+  color: var(--c-white);
+  box-shadow: var(--shadow-red);
+}
+
+.SNTPEngineering-primary-button:hover {
+  background: var(--c-red-deep);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(200,16,46,0.35);
+}
+
+.SNTPEngineering-secondary-button {
+  background: transparent;
+  color: var(--c-white);
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+.SNTPEngineering-secondary-button:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: var(--c-white);
+  transform: translateY(-3px);
+}
+
+/* ==================== ANIMATIONS ==================== */
+.SNTPEngineering-fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+
+.SNTPEngineering-fade-in-section.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes float-badge {
+  0%, 100% { transform: translate(-50%,-50%) translateY(0); }
+  50%       { transform: translate(-50%,-50%) translateY(-8px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-24px) scale(1.03); }
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+
+@keyframes pulse-box {
+  0%   { transform: translate(-50%,-50%) scale(1); opacity: 0.6; }
+  100% { transform: translate(-50%,-50%) scale(1.4); opacity: 0; }
+}
+
+@keyframes pulse-icon {
+  0%, 100% { box-shadow: var(--shadow-red); }
+  50%       { box-shadow: 0 15px 60px rgba(200,16,46,0.5); }
+}
+
+@keyframes pulse-banner {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.04); }
+}
+
+@keyframes rotate-badge {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes slide-arrow {
+  0%, 100% { transform: translateX(0); }
+  50%       { transform: translateX(8px); }
+}
+
+@keyframes expand-line {
+  to { width: 280px; }
+}
+
+@keyframes orbit-1 {
+  0%, 100% { top: 0;   left: 50%; }
+  33%  { top: 50%;  right: 0; left: auto; }
+  66%  { bottom: 0; top: auto; left: 50%; right: auto; }
+}
+@keyframes orbit-2 {
+  0%, 100% { top: 50%; right: 0; }
+  33%  { bottom: 0; top: auto; left: 50%; right: auto; }
+  66%  { top: 0;   bottom: auto; left: 50%; }
+}
+@keyframes orbit-3 {
+  0%, 100% { bottom: 0; left: 50%; }
+  33%  { top: 0;   bottom: auto; left: 50%; }
+  66%  { top: 50%; right: 0; left: auto; bottom: auto; }
+}
+
+/* ========================================
+   EXPERTISE MODERNE
+   ======================================== */
+.SNTPEngineering-expertise-modern-section {
+  padding: var(--space-2xl) 40px;
+  background: var(--c-white);
+  position: relative;
+}
+
+.SNTPEngineering-expertise-modern-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.SNTPEngineering-expertise-modern-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--c-black);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+  position: relative;
+  display: inline-block;
+}
+
+.SNTPEngineering-expertise-modern-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 2px;
+  background: var(--c-red);
+}
+
+.SNTPEngineering-expertise-modern-underline {
+  width: 48px;
+  height: 3px;
+  background: var(--c-red);
+  margin: 0 auto;
+  border-radius: 1px;
+}
+
+/* Expertise Hero */
+.SNTPEngineering-expertise-hero {
+  background: var(--c-black);
+  padding: 36px 40px;
+  border-radius: 2px;
+  margin-bottom: var(--space-xl);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border-left: 4px solid var(--c-red);
+}
+
+.SNTPEngineering-expertise-hero::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -8%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, var(--c-red-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.SNTPEngineering-expertise-hero-badge {
+  width: 72px;
+  height: 72px;
+  background: var(--c-red);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+  box-shadow: var(--shadow-red);
+  transition: transform var(--t-base);
+}
+
+.SNTPEngineering-expertise-hero:hover .SNTPEngineering-expertise-hero-badge {
+  transform: rotate(8deg) scale(1.05);
+}
+
+.SNTPEngineering-expertise-hero-badge svg { color: var(--c-white); }
+
+.SNTPEngineering-expertise-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  color: var(--c-white);
+  letter-spacing: 4px;
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+}
+
+.SNTPEngineering-expertise-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-sm);
+}
+
+.SNTPEngineering-expertise-hero-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  background: rgba(255,255,255,0.04);
+  border-left: 3px solid rgba(200,16,46,0.5);
+  transition: background var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
+}
+
+.SNTPEngineering-expertise-hero-item:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: var(--c-red);
+  transform: translateX(6px);
+}
+
+.SNTPEngineering-expertise-hero-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--c-red);
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(200,16,46,0.7);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.SNTPEngineering-expertise-hero-item span {
+  color: var(--c-gray-light);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
+  transition: color var(--t-fast);
+}
+
+.SNTPEngineering-expertise-hero-item:hover span { color: var(--c-white); }
+
+/* Compétences */
+.SNTPEngineering-expertise-skills-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.SNTPEngineering-expertise-skills-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--c-black);
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.SNTPEngineering-expertise-skills-line {
+  width: 48px;
+  height: 2px;
+  background: var(--c-red);
+  margin: 0 auto;
+}
+
+.SNTPEngineering-expertise-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: var(--space-md);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.SNTPEngineering-expertise-skill-card {
+  background: var(--c-white);
+  padding: 28px 32px;
+  border-radius: 2px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--c-gray-pale);
+  border-top: 3px solid var(--c-gray-pale);
+  transition: transform var(--t-base), box-shadow var(--t-base), border-top-color var(--t-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.SNTPEngineering-expertise-skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+  border-top-color: var(--c-red);
+}
+
+.SNTPEngineering-expertise-skill-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--c-off-white);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+  transition: background var(--t-base), transform var(--t-base), box-shadow var(--t-base);
+}
+
+.SNTPEngineering-expertise-skill-card:hover .SNTPEngineering-expertise-skill-icon {
+  background: var(--c-red);
+  transform: rotate(-4deg) scale(1.06);
+  box-shadow: var(--shadow-red);
+}
+
+.SNTPEngineering-expertise-skill-icon svg {
+  color: var(--c-charcoal);
+  transition: color var(--t-base);
+}
+
+.SNTPEngineering-expertise-skill-card:hover .SNTPEngineering-expertise-skill-icon svg {
+  color: var(--c-white);
+}
+
+.SNTPEngineering-expertise-skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.SNTPEngineering-expertise-skill-list li {
+  padding: 13px 0 13px 22px;
+  position: relative;
+  color: var(--c-gray-dark);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-weight: 400;
+  transition: color var(--t-fast), padding-left var(--t-fast);
+  border-bottom: 1px solid var(--c-gray-pale);
+}
+
+.SNTPEngineering-expertise-skill-list li:last-child { border-bottom: none; }
+
+.SNTPEngineering-expertise-skill-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--c-red);
+  border-radius: 50%;
+  transition: all var(--t-fast);
+}
+
+.SNTPEngineering-expertise-skill-list li:hover {
+  padding-left: 28px;
+  color: var(--c-black);
+}
+
+.SNTPEngineering-expertise-skill-list li:hover::before {
+  width: 10px;
+  height: 10px;
+  box-shadow: 0 0 10px rgba(200,16,46,0.6);
+}
+
+/* ========================================
+   ÉQUIPE MODERNE
+   ======================================== */
+.SNTPEngineering-team-modern-section {
+  padding: var(--space-2xl) 40px;
+  background: var(--c-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.SNTPEngineering-team-modern-section::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--c-red-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.SNTPEngineering-team-modern-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-team-modern-badge {
+  width: 90px;
+  height: 90px;
+  background: var(--c-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-md);
+  box-shadow: var(--shadow-red);
+  animation: float 3.5s ease-in-out infinite;
+}
+
+.SNTPEngineering-team-modern-badge svg { color: var(--c-white); }
+
+.SNTPEngineering-team-modern-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  color: var(--c-white);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.SNTPEngineering-team-modern-underline {
+  width: 48px;
+  height: 2px;
+  background: var(--c-red);
+  margin: 0 auto var(--space-md);
+}
+
+.SNTPEngineering-team-modern-subtitle {
+  font-size: 1rem;
+  color: var(--c-gray-mid);
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.SNTPEngineering-team-modern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+  max-width: 1400px;
+  margin: 0 auto var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-team-modern-card { height: 280px; }
+
+.SNTPEngineering-team-modern-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 3px solid rgba(200,16,46,0.4);
+  border-radius: 2px;
+  padding: 24px 28px;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--t-base), box-shadow var(--t-base), border-color var(--t-fast), background var(--t-fast);
+  overflow: hidden;
+}
+
+.SNTPEngineering-team-modern-card:hover .SNTPEngineering-team-modern-card-inner {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-left-color: var(--c-red);
+  background: rgba(255,255,255,0.07);
+}
+
+.SNTPEngineering-team-modern-icon-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-team-modern-icon {
+  width: 68px;
+  height: 68px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: background var(--t-base), transform var(--t-base), box-shadow var(--t-base);
+}
+
+.SNTPEngineering-team-modern-card:hover .SNTPEngineering-team-modern-icon {
+  background: var(--c-red);
+  border-color: var(--c-red);
+  transform: rotate(-6deg) scale(1.08);
+  box-shadow: var(--shadow-red);
+}
+
+.SNTPEngineering-team-modern-icon svg {
+  color: var(--c-gray-light);
+  transition: color var(--t-base);
+}
+
+.SNTPEngineering-team-modern-card:hover .SNTPEngineering-team-modern-icon svg {
+  color: var(--c-white);
+}
+
+.SNTPEngineering-team-modern-number {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.1);
+  transition: color var(--t-base);
+}
+
+.SNTPEngineering-team-modern-card:hover .SNTPEngineering-team-modern-number {
+  color: var(--c-red);
+}
+
+.SNTPEngineering-team-modern-card-title {
+  font-size: 1rem;
+  color: var(--c-gray-light);
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+  position: relative;
+  z-index: 1;
+  transition: color var(--t-fast);
+}
+
+.SNTPEngineering-team-modern-card:hover .SNTPEngineering-team-modern-card-title {
+  color: var(--c-white);
+}
+
+.SNTPEngineering-team-modern-card-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--c-red);
+  transition: width 0.5s var(--ease);
+}
+
+.SNTPEngineering-team-modern-card:hover .SNTPEngineering-team-modern-card-bar {
+  width: 100%;
+}
+
+.SNTPEngineering-team-modern-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-xl);
+  padding: 24px 28px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(200,16,46,0.2);
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-team-modern-stat { text-align: center; }
+
+.SNTPEngineering-team-modern-stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  letter-spacing: 3px;
+  color: var(--c-red);
+  margin-bottom: 8px;
+}
+
+.SNTPEngineering-team-modern-stat-label {
+  font-size: 0.75rem;
+  color: var(--c-gray-mid);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.SNTPEngineering-team-modern-stat-divider {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(180deg, transparent, var(--c-red), transparent);
+}
+
+/* ========================================
+   TECHNOLOGIE & INNOVATION
+   ======================================== */
+.SNTPEngineering-tech-section {
+  padding: var(--space-2xl) 40px;
+  background: var(--c-off-white);
+  position: relative;
+}
+
+.SNTPEngineering-tech-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-tech-icon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-lg);
+}
+
+.SNTPEngineering-tech-icon-orbit {
+  position: relative;
+  width: 140px;
+  height: 140px;
+}
+
+.SNTPEngineering-tech-icon-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85px;
+  height: 85px;
+  background: var(--c-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-red);
+  animation: pulse-icon 2.5s ease-in-out infinite;
+}
+
+.SNTPEngineering-tech-icon-center svg { color: var(--c-white); }
+
+.SNTPEngineering-tech-orbit-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--c-red);
+  border-radius: 50%;
+  box-shadow: 0 0 16px rgba(200,16,46,0.7);
+}
+
+.SNTPEngineering-tech-orbit-dot-1 { top: 0; left: 50%; transform: translateX(-50%); animation: orbit-1 3s linear infinite; }
+.SNTPEngineering-tech-orbit-dot-2 { top: 50%; right: 0; transform: translateY(-50%); animation: orbit-2 3s linear infinite; }
+.SNTPEngineering-tech-orbit-dot-3 { bottom: 0; left: 50%; transform: translateX(-50%); animation: orbit-3 3s linear infinite; }
+
+.SNTPEngineering-tech-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  color: var(--c-black);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+.SNTPEngineering-tech-subtitle {
+  font-size: 0.8rem;
+  color: var(--c-red);
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+.SNTPEngineering-tech-underline {
+  width: 48px;
+  height: 2px;
+  background: var(--c-red);
+  margin: 0 auto;
+}
+
+.SNTPEngineering-tech-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: var(--space-md);
+  max-width: 1400px;
+  margin: 0 auto var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-tech-grid .SNTPEngineering-tech-card {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.SNTPEngineering-tech-card {
+  position: relative;
+  background: var(--c-white);
+  border-radius: 2px;
+  padding: 38px 34px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--c-gray-pale);
+  border-top: 3px solid var(--c-gray-pale);
+  transition: transform var(--t-base), box-shadow var(--t-base), border-top-color var(--t-fast);
+  overflow: hidden;
+}
+
+.SNTPEngineering-tech-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+  border-top-color: var(--c-red);
+}
+
+.SNTPEngineering-tech-card-glow {
+  position: absolute;
+  bottom: -40%;
+  right: -40%;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, var(--c-red-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity var(--t-slow);
+}
+
+.SNTPEngineering-tech-card:hover .SNTPEngineering-tech-card-glow { opacity: 1; }
+
+.SNTPEngineering-tech-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-tech-card-number {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+  color: var(--c-gray-pale);
+  line-height: 1;
+  transition: color var(--t-base);
+}
+
+.SNTPEngineering-tech-card:hover .SNTPEngineering-tech-card-number {
+  color: var(--c-red);
+}
+
+.SNTPEngineering-tech-card-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--c-off-white);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--t-base), transform var(--t-slow), box-shadow var(--t-base);
+}
+
+.SNTPEngineering-tech-card:hover .SNTPEngineering-tech-card-icon {
+  background: var(--c-red);
+  transform: rotate(360deg) scale(1.05);
+  box-shadow: var(--shadow-red);
+}
+
+.SNTPEngineering-tech-card-icon svg {
+  color: var(--c-charcoal);
+  transition: color var(--t-base);
+}
+
+.SNTPEngineering-tech-card:hover .SNTPEngineering-tech-card-icon svg {
+  color: var(--c-white);
+}
+
+.SNTPEngineering-tech-card-content { position: relative; z-index: 1; }
+
+.SNTPEngineering-tech-card-title {
+  font-size: 1rem;
+  color: var(--c-black);
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+  transition: color var(--t-fast);
+}
+
+.SNTPEngineering-tech-card-indicator {
+  width: 100%;
+  height: 3px;
+  background: var(--c-gray-pale);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.SNTPEngineering-tech-card-indicator-fill {
+  height: 100%;
+  background: var(--c-red);
+  border-radius: 1px;
+  width: 0;
+  transition: width 0.7s var(--ease) 0.15s;
+}
+
+.SNTPEngineering-tech-card:hover .SNTPEngineering-tech-card-indicator-fill { width: 100%; }
+
+.SNTPEngineering-tech-banner {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--c-black);
+  border-radius: 2px;
+  padding: 36px 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border-left: 4px solid var(--c-red);
+}
+
+.SNTPEngineering-tech-banner-pattern {
+  position: absolute;
+  top: 0; right: 0;
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, var(--c-red-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.SNTPEngineering-tech-banner-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-tech-banner-icon {
+  width: 90px;
+  height: 90px;
+  background: var(--c-red);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-red);
+  animation: pulse-banner 2.5s ease-in-out infinite;
+}
+
+.SNTPEngineering-tech-banner-icon svg { color: var(--c-white); }
+
+.SNTPEngineering-tech-banner-text { flex: 1; }
+
+.SNTPEngineering-tech-banner-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.3rem);
+  color: var(--c-white);
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.SNTPEngineering-tech-banner-description {
+  font-size: 1rem;
+  color: var(--c-gray-mid);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ========================================
+   PROPOSITION DE VALEUR
+   ======================================== */
+.SNTPEngineering-value-prop-section {
+  padding: var(--space-2xl) 40px;
+  background: var(--c-white);
+  position: relative;
+}
+
+.SNTPEngineering-value-prop-header { text-align: center; margin-bottom: var(--space-xl); }
+
+.SNTPEngineering-value-prop-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 4.2rem);
+  color: var(--c-black);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.SNTPEngineering-value-prop-main-underline {
+  width: 48px;
+  height: 2px;
+  background: var(--c-red);
+  margin: 0 auto;
+}
+
+.SNTPEngineering-value-prop-block {
+  max-width: 1400px;
+  margin: 0 auto var(--space-lg);
+  background: var(--c-white);
+  border-radius: 2px;
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--c-gray-pale);
+  border-top: 3px solid var(--c-gray-pale);
+  position: relative;
+}
+
+.SNTPEngineering-value-prop-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--c-red);
+}
+
+.SNTPEngineering-value-prop-block-primary {
+  border-top-color: var(--c-red);
+}
+
+.SNTPEngineering-value-prop-block-secondary {
+  background: var(--c-off-white);
+  border-top-color: var(--c-black);
+}
+
+.SNTPEngineering-value-prop-block-secondary::before {
+  background: var(--c-black);
+}
+
+.SNTPEngineering-value-prop-block-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--c-gray-pale);
+}
+
+.SNTPEngineering-value-prop-block-icon {
+  width: 72px;
+  height: 72px;
+  background: var(--c-red);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-red);
+}
+
+.SNTPEngineering-value-prop-block-secondary .SNTPEngineering-value-prop-block-icon {
+  background: var(--c-black);
+  box-shadow: var(--shadow-md);
+}
+
+.SNTPEngineering-value-prop-block-icon svg { color: var(--c-white); }
+
+.SNTPEngineering-value-prop-block-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  color: var(--c-black);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.SNTPEngineering-value-prop-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: var(--space-sm);
+}
+
+.SNTPEngineering-value-prop-cards .SNTPEngineering-value-prop-card {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.SNTPEngineering-value-prop-card {
+  background: var(--c-white);
+  padding: var(--space-md);
+  border-left: 3px solid var(--c-red);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--t-fast), box-shadow var(--t-fast), border-left-width var(--t-fast);
+}
+
+.SNTPEngineering-value-prop-card:hover {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-md);
+  border-left-width: 5px;
+}
+
+.SNTPEngineering-value-prop-card::before { display: none; }
+
+.SNTPEngineering-value-prop-card-marker {
+  width: 8px;
+  height: 8px;
+  background: var(--c-red);
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+.SNTPEngineering-value-prop-card-title {
+  font-size: 0.95rem;
+  color: var(--c-black);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.SNTPEngineering-value-prop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+
+.SNTPEngineering-value-prop-item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: var(--space-md);
+  background: var(--c-off-white);
+  border-radius: 2px;
+  transition: background var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
+}
+
+.SNTPEngineering-value-prop-item:hover {
+  background: var(--c-white);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-4px);
+}
+
+.SNTPEngineering-value-prop-item::before { display: none; }
+
+.SNTPEngineering-value-prop-item-number {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  color: var(--c-red);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.SNTPEngineering-value-prop-item-content { flex: 1; }
+
+.SNTPEngineering-value-prop-item-title {
+  font-size: 1rem;
+  color: var(--c-black);
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.SNTPEngineering-value-prop-item-line {
+  width: 0;
+  height: 2px;
+  background: var(--c-red);
+  transition: width 0.5s var(--ease) 0.15s;
+}
+
+.SNTPEngineering-value-prop-item:hover .SNTPEngineering-value-prop-item-line { width: 60px; }
+
+/* Synergie */
+.SNTPEngineering-value-prop-synergy {
+  max-width: 1400px;
+  margin: var(--space-xl) auto 0;
+  background: var(--c-black);
+  border-radius: 2px;
+  padding: 36px 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border-left: 4px solid var(--c-red);
+}
+
+.SNTPEngineering-value-prop-synergy-pattern {
+  position: absolute;
+  top: -40%;
+  right: -8%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--c-red-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.SNTPEngineering-value-prop-synergy-content {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-value-prop-synergy-badge {
+  width: 100px;
+  height: 100px;
+  background: var(--c-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-red);
+  animation: rotate-badge 12s linear infinite;
+}
+
+.SNTPEngineering-value-prop-synergy-badge svg { color: var(--c-white); }
+
+.SNTPEngineering-value-prop-synergy-text { flex: 1; }
+
+.SNTPEngineering-value-prop-synergy-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  color: var(--c-white);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.SNTPEngineering-value-prop-synergy-intro {
+  font-size: 1rem;
+  color: var(--c-gray-mid);
+  font-weight: 300;
+  margin-bottom: var(--space-md);
+  line-height: 1.7;
+}
+
+.SNTPEngineering-value-prop-synergy-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.SNTPEngineering-value-prop-synergy-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(255,255,255,0.04);
+  border-left: 3px solid rgba(200,16,46,0.4);
+  transition: background var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
+}
+
+.SNTPEngineering-value-prop-synergy-item:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: var(--c-red);
+  transform: translateX(8px);
+}
+
+.SNTPEngineering-value-prop-synergy-icon {
+  width: 30px;
+  height: 30px;
+  background: var(--c-red);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.SNTPEngineering-value-prop-synergy-icon svg { color: var(--c-white); }
+
+.SNTPEngineering-value-prop-synergy-item span {
+  color: var(--c-gray-light);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
+  transition: color var(--t-fast);
+}
+
+.SNTPEngineering-value-prop-synergy-item:hover span { color: var(--c-white); }
+
+/* ========================================
+   AVANTAGES COMPÉTITIFS
+   ======================================== */
+.SNTPEngineering-advantages-section {
+  padding: var(--space-2xl) 40px;
+  background: var(--c-off-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.SNTPEngineering-advantages-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-advantages-badge-wrapper {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin: 0 auto var(--space-md);
+}
+
+.SNTPEngineering-advantages-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  background: var(--c-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-red);
+  z-index: 2;
+  animation: float-badge 3s ease-in-out infinite;
+}
+
+.SNTPEngineering-advantages-badge svg { color: var(--c-white); }
+
+.SNTPEngineering-advantages-badge-ring {
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--c-red);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+.SNTPEngineering-advantages-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  color: var(--c-black);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+  line-height: 1.1;
+}
+
+.SNTPEngineering-advantages-main-underline {
+  width: 48px;
+  height: 2px;
+  background: var(--c-red);
+  margin: 0 auto;
+}
+
+.SNTPEngineering-advantages-block {
+  max-width: 1400px;
+  margin: 0 auto var(--space-lg);
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.SNTPEngineering-advantages-block:last-child { margin-bottom: 0; }
+
+.SNTPEngineering-advantages-block-wrapper { position: relative; z-index: 1; }
+
+.SNTPEngineering-advantages-block-light {
+  background: var(--c-white);
+  border: 1px solid var(--c-gray-pale);
+  border-top: 3px solid var(--c-red);
+}
+
+.SNTPEngineering-advantages-block-dark {
+  background: var(--c-black);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-left: 4px solid var(--c-red);
+}
+
+.SNTPEngineering-advantages-block-dark::before {
+  content: '';
+  position: absolute;
+  top: -25%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--c-red-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.SNTPEngineering-advantages-block-content {
+  padding: 36px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-advantages-block-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid rgba(200,16,46,0.15);
+}
+
+.SNTPEngineering-advantages-block-dark .SNTPEngineering-advantages-block-header {
+  border-bottom-color: rgba(255,255,255,0.06);
+}
+
+.SNTPEngineering-advantages-block-icon-box {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.SNTPEngineering-advantages-block-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--c-red);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-red);
+  position: relative;
+  z-index: 2;
+  transition: transform var(--t-base);
+}
+
+.SNTPEngineering-advantages-block:hover .SNTPEngineering-advantages-block-icon {
+  transform: rotate(-6deg) scale(1.04);
+}
+
+.SNTPEngineering-advantages-block-icon svg { color: var(--c-white); }
+
+.SNTPEngineering-advantages-block-icon-light {
+  background: var(--c-white);
+  box-shadow: var(--shadow-md);
+}
+
+.SNTPEngineering-advantages-block-icon-light svg { color: var(--c-red); }
+
+.SNTPEngineering-advantages-block-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--c-red);
+  border-radius: 2px;
+  animation: pulse-box 2.5s ease-out infinite;
+}
+
+.SNTPEngineering-advantages-block-pulse-light { border-color: rgba(255,255,255,0.3); }
+
+.SNTPEngineering-advantages-block-title-wrapper { flex: 1; }
+
+.SNTPEngineering-advantages-block-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  color: var(--c-black);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+
+.SNTPEngineering-advantages-block-title-light { color: var(--c-white); }
+
+.SNTPEngineering-advantages-block-subtitle {
+  font-size: 0.75rem;
+  color: var(--c-red);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.SNTPEngineering-advantages-block-subtitle-light { color: var(--c-gray-mid); }
+
+.SNTPEngineering-advantages-items-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: var(--space-sm);
+}
+
+.SNTPEngineering-advantages-items-list .SNTPEngineering-advantages-list-item {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.SNTPEngineering-advantages-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: var(--space-md);
+  background: var(--c-off-white);
+  border-left: 3px solid var(--c-red);
+  transition: transform var(--t-fast), box-shadow var(--t-fast), border-left-width var(--t-fast), background var(--t-fast);
+}
+
+.SNTPEngineering-advantages-list-item::before { display: none; }
+
+.SNTPEngineering-advantages-list-item:hover {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-sm);
+  border-left-width: 5px;
+  background: var(--c-white);
+}
+
+/* Tech grid (01-04) */
+.SNTPEngineering-advantages-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-advantages-tech-card {
+  background: rgba(255,255,255,0.04);
+  border-radius: 2px;
+  padding: var(--space-md);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-left: 3px solid rgba(200,16,46,0.3);
+  transition: background var(--t-base), border-color var(--t-fast), transform var(--t-base), box-shadow var(--t-base);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.SNTPEngineering-advantages-tech-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--c-red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--t-base);
+}
+
+.SNTPEngineering-advantages-tech-card:hover::before { transform: scaleX(1); }
+
+.SNTPEngineering-advantages-tech-card:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: var(--c-red);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.SNTPEngineering-advantages-tech-number {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.08);
+  line-height: 1;
+  transition: color var(--t-base);
+}
+
+.SNTPEngineering-advantages-tech-card:hover .SNTPEngineering-advantages-tech-number { color: var(--c-red); }
+
+.SNTPEngineering-advantages-tech-icon {
+  width: 54px;
+  height: 54px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: background var(--t-base), border-color var(--t-fast), transform var(--t-base), box-shadow var(--t-base);
+}
+
+.SNTPEngineering-advantages-tech-card:hover .SNTPEngineering-advantages-tech-icon {
+  background: var(--c-red);
+  border-color: var(--c-red);
+  transform: rotate(-6deg) scale(1.06);
+  box-shadow: var(--shadow-red);
+}
+
+.SNTPEngineering-advantages-tech-icon svg {
+  color: rgba(255,255,255,0.6);
+  transition: color var(--t-fast);
+}
+
+.SNTPEngineering-advantages-tech-card:hover .SNTPEngineering-advantages-tech-icon svg { color: var(--c-white); }
+
+.SNTPEngineering-advantages-tech-title {
+  font-size: 0.95rem;
+  color: var(--c-gray-light);
+  font-weight: 600;
+  line-height: 1.5;
+  transition: color var(--t-fast);
+}
+
+.SNTPEngineering-advantages-tech-card:hover .SNTPEngineering-advantages-tech-title { color: var(--c-white); }
+
+.SNTPEngineering-advantages-tech-desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.6;
+  font-weight: 300;
+  transition: color var(--t-fast);
+}
+
+.SNTPEngineering-advantages-tech-card:hover .SNTPEngineering-advantages-tech-desc { color: rgba(255,255,255,0.7); }
+
+.SNTPEngineering-advantages-list-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--c-red);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-red);
+  transition: transform var(--t-fast);
+}
+
+.SNTPEngineering-advantages-list-item:hover .SNTPEngineering-advantages-list-icon {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.SNTPEngineering-advantages-list-icon svg { color: var(--c-white); }
+
+.SNTPEngineering-advantages-list-content { flex: 1; }
+
+.SNTPEngineering-advantages-list-title {
+  font-size: 0.95rem;
+  color: var(--c-black);
+  font-weight: 700;
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+.SNTPEngineering-advantages-list-text {
+  font-size: 0.875rem;
+  color: var(--c-gray-dark);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* ========================================
+   VISION STRATÉGIQUE
+   ======================================== */
+.SNTPEngineering-vision-section {
+  padding: var(--space-2xl) 40px;
+  background: var(--c-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.SNTPEngineering-vision-section::before {
+  content: '';
+  position: absolute;
+  top: -25%;
+  right: -12%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--c-red-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float-slow 9s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.SNTPEngineering-vision-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-vision-year-badge {
+  display: inline-flex;
+  margin-bottom: var(--space-md);
+  padding: 16px 36px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--c-red);
+}
+
+.SNTPEngineering-vision-year-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.SNTPEngineering-vision-year-from,
+.SNTPEngineering-vision-year-to {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+  color: var(--c-white);
+}
+
+.SNTPEngineering-vision-year-arrow {
+  display: flex;
+  align-items: center;
+  animation: slide-arrow 1.8s ease-in-out infinite;
+}
+
+.SNTPEngineering-vision-year-arrow svg { color: var(--c-red); }
+
+.SNTPEngineering-vision-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  color: var(--c-white);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.SNTPEngineering-vision-main-underline {
+  width: 48px;
+  height: 2px;
+  background: var(--c-red);
+  margin: 0 auto var(--space-md);
+}
+
+.SNTPEngineering-vision-subtitle {
+  font-size: 1rem;
+  color: var(--c-gray-mid);
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.SNTPEngineering-vision-hero {
+  max-width: 900px;
+  margin: 0 auto var(--space-xl);
+  text-align: center;
+  padding: 28px 32px;
+  background: rgba(200,16,46,0.06);
+  border: 1px solid rgba(200,16,46,0.2);
+  border-left: 4px solid var(--c-red);
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-vision-hero-icon {
+  width: 90px;
+  height: 90px;
+  background: var(--c-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-md);
+  box-shadow: var(--shadow-red);
+  animation: rotate-slow 12s linear infinite;
+}
+
+.SNTPEngineering-vision-hero-icon svg { color: var(--c-white); }
+
+.SNTPEngineering-vision-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  color: var(--c-white);
+  letter-spacing: 3px;
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+}
+
+.SNTPEngineering-vision-hero-line {
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--c-red), var(--c-white), var(--c-red));
+  margin: 0 auto;
+  animation: expand-line 2s ease-out forwards;
+}
+
+.SNTPEngineering-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+  max-width: 1400px;
+  margin: 0 auto var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-vision-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 2px;
+  padding: 38px 32px;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-left: 3px solid rgba(200,16,46,0.3);
+  transition: background var(--t-base), border-color var(--t-fast), transform var(--t-base), box-shadow var(--t-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.SNTPEngineering-vision-card::before { display: none; }
+
+.SNTPEngineering-vision-card:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: var(--c-red);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.SNTPEngineering-vision-card-number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  letter-spacing: 3px;
+  color: rgba(200,16,46,0.2);
+  line-height: 1;
+  margin-bottom: 16px;
+  transition: color var(--t-base);
+}
+
+.SNTPEngineering-vision-card:hover .SNTPEngineering-vision-card-number {
+  color: var(--c-red);
+}
+
+.SNTPEngineering-vision-card-icon {
+  width: 68px;
+  height: 68px;
+  background: rgba(200,16,46,0.1);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+  transition: background var(--t-base), transform var(--t-base), box-shadow var(--t-base);
+}
+
+.SNTPEngineering-vision-card:hover .SNTPEngineering-vision-card-icon {
+  background: var(--c-red);
+  transform: rotate(-6deg) scale(1.08);
+  box-shadow: var(--shadow-red);
+}
+
+.SNTPEngineering-vision-card-icon svg {
+  color: rgba(255,255,255,0.5);
+  transition: color var(--t-base);
+}
+
+.SNTPEngineering-vision-card:hover .SNTPEngineering-vision-card-icon svg { color: var(--c-white); }
+
+.SNTPEngineering-vision-card-title {
+  font-size: 1rem;
+  color: var(--c-gray-light);
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+  min-height: 64px;
+  transition: color var(--t-fast);
+}
+
+.SNTPEngineering-vision-card:hover .SNTPEngineering-vision-card-title { color: var(--c-white); }
+
+.SNTPEngineering-vision-card-progress {
+  width: 100%;
+  height: 3px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.SNTPEngineering-vision-card-progress-bar {
+  height: 100%;
+  background: var(--c-red);
+  border-radius: 1px;
+  width: 0;
+  transition: width 0.9s var(--ease) 0.2s;
+}
+
+.SNTPEngineering-vision-card:hover .SNTPEngineering-vision-card-progress-bar { width: 100%; }
+
+.SNTPEngineering-vision-timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px 32px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(200,16,46,0.15);
+  position: relative;
+  z-index: 1;
+}
+
+/* ==================== CHIFFRES CLÉS ==================== */
+.SNTPEngineering-stats-section {
+  padding: var(--space-2xl) 40px;
+  background: var(--c-black);
+  position: relative;
+  overflow: hidden;
+}
+
+.SNTPEngineering-stats-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-stats-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  color: var(--c-white);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.SNTPEngineering-stats-main-underline {
+  width: 48px;
+  height: 2px;
+  background: var(--c-red);
+  margin: 0 auto;
+}
+
+.SNTPEngineering-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  max-width: 1200px;
+  margin: 0 auto var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-stats-card {
+  background: var(--c-white);
+  border-radius: 2px;
+  border: 1px solid var(--c-gray-pale);
+  border-top: 3px solid var(--c-red);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--t-base), box-shadow var(--t-base);
+  overflow: hidden;
+  position: relative;
+}
+
+.SNTPEngineering-stats-card::before { display: none; }
+
+.SNTPEngineering-stats-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.SNTPEngineering-stats-card-dark {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-top: 3px solid var(--c-white);
+}
+
+.SNTPEngineering-stats-card-inner {
+  padding: 30px 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-stats-card-glow {
+  position: absolute;
+  bottom: -40%;
+  right: -40%;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, var(--c-red-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity var(--t-slow);
+}
+
+.SNTPEngineering-stats-card:hover .SNTPEngineering-stats-card-glow { opacity: 1; }
+
+.SNTPEngineering-stats-icon-wrapper {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto var(--space-md);
+}
+
+.SNTPEngineering-stats-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  background: var(--c-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-red);
+  transition: transform var(--t-slow), box-shadow var(--t-slow);
+  z-index: 2;
+}
+
+.SNTPEngineering-stats-card:hover .SNTPEngineering-stats-icon {
+  transform: translate(-50%, -50%) rotate(360deg) scale(1.08);
+  box-shadow: 0 20px 50px rgba(200,16,46,0.5);
+}
+
+.SNTPEngineering-stats-icon-light {
+  background: var(--c-white);
+  box-shadow: var(--shadow-md);
+}
+
+.SNTPEngineering-stats-icon svg { color: var(--c-white); }
+.SNTPEngineering-stats-icon-light svg { color: var(--c-red); }
+
+.SNTPEngineering-stats-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  border: 2px solid var(--c-red);
+  border-radius: 50%;
+  animation: pulse-stats 2.5s ease-out infinite;
+}
+
+.SNTPEngineering-stats-pulse-light { border-color: var(--c-gray-light); }
+
+@keyframes pulse-stats {
+  0%   { transform: translate(-50%,-50%) scale(1);   opacity: 0.7; }
+  100% { transform: translate(-50%,-50%) scale(1.5); opacity: 0; }
+}
+
+.SNTPEngineering-stats-content { text-align: center; }
+
+.SNTPEngineering-stats-number-wrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.SNTPEngineering-stats-number {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  letter-spacing: 3px;
+  color: var(--c-red);
+  line-height: 1;
+  animation: countUp 1s var(--ease);
+}
+
+.SNTPEngineering-stats-number-light { color: var(--c-white); }
+
+.SNTPEngineering-stats-plus,
+.SNTPEngineering-stats-percent {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+  letter-spacing: 2px;
+  color: var(--c-red);
+}
+
+.SNTPEngineering-stats-plus-light { color: var(--c-white); }
+
+.SNTPEngineering-stats-label {
+  font-size: 0.75rem;
+  color: var(--c-charcoal);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1.5;
+}
+
+.SNTPEngineering-stats-label-light { color: var(--c-gray-light); }
+
+.SNTPEngineering-stats-banner {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--c-red);
+  border-radius: 2px;
+  padding: 30px 40px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  box-shadow: var(--shadow-red);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.SNTPEngineering-stats-banner::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.SNTPEngineering-stats-banner-icon {
+  width: 100px;
+  height: 100px;
+  background: var(--c-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-md);
+  animation: rotate-banner 12s linear infinite;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes rotate-banner {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.SNTPEngineering-stats-banner-icon svg { color: var(--c-red); }
+
+.SNTPEngineering-stats-banner-content {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-stats-banner-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.3rem);
+  color: var(--c-white);
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.SNTPEngineering-stats-banner-text {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.88);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================== MÉTHODOLOGIE ==================== */
+.SNTPEngineering-methodology-section {
+  padding: var(--space-2xl) 40px;
+  background: var(--c-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.SNTPEngineering-methodology-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-methodology-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  color: var(--c-black);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.SNTPEngineering-methodology-main-underline {
+  width: 48px;
+  height: 2px;
+  background: var(--c-red);
+  margin: 0 auto var(--space-sm);
+}
+
+.SNTPEngineering-methodology-subtitle {
+  font-size: 1rem;
+  color: var(--c-gray);
+  font-style: italic;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.SNTPEngineering-methodology-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: var(--space-md);
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-methodology-grid .SNTPEngineering-methodology-card {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.SNTPEngineering-methodology-card {
+  background: var(--c-white);
+  border-radius: 2px;
+  padding: 30px 36px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--c-gray-pale);
+  border-top: 3px solid var(--c-gray-pale);
+  transition: transform var(--t-base), box-shadow var(--t-base), border-top-color var(--t-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.SNTPEngineering-methodology-card::before { display: none; }
+
+.SNTPEngineering-methodology-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+  border-top-color: var(--c-red);
+}
+
+.SNTPEngineering-methodology-card-dark {
+  background: var(--c-black);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-top: 3px solid var(--c-white);
+  border-left: 4px solid var(--c-red);
+}
+
+.SNTPEngineering-methodology-card-dark::after {
+  content: '';
+  position: absolute;
+  top: -25%;
+  right: -15%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--c-red-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.SNTPEngineering-methodology-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid rgba(200,16,46,0.12);
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-methodology-card-dark .SNTPEngineering-methodology-card-header {
+  border-bottom-color: rgba(255,255,255,0.06);
+}
+
+.SNTPEngineering-methodology-card-icon {
+  width: 72px;
+  height: 72px;
+  background: var(--c-red);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-red);
+  transition: transform var(--t-base);
+}
+
+.SNTPEngineering-methodology-card:hover .SNTPEngineering-methodology-card-icon {
+  transform: rotate(-6deg) scale(1.04);
+}
+
+.SNTPEngineering-methodology-card-icon-light {
+  background: var(--c-white);
+  box-shadow: var(--shadow-md);
+}
+
+.SNTPEngineering-methodology-card-icon svg { color: var(--c-white); }
+.SNTPEngineering-methodology-card-icon-light svg { color: var(--c-red); }
+
+.SNTPEngineering-methodology-card-title-wrapper { flex: 1; }
+
+.SNTPEngineering-methodology-card-number {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--c-red);
+  margin-bottom: 6px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.SNTPEngineering-methodology-card-number-light { color: var(--c-gray-mid); }
+
+.SNTPEngineering-methodology-card-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  color: var(--c-black);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.SNTPEngineering-methodology-card-title-light { color: var(--c-white); }
+
+.SNTPEngineering-methodology-card-content { position: relative; z-index: 1; }
+
+.SNTPEngineering-methodology-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.SNTPEngineering-methodology-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--c-off-white);
+  border-left: 3px solid rgba(200,16,46,0.3);
+  transition: background var(--t-fast), border-color var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
+  position: relative;
+}
+
+.SNTPEngineering-methodology-list li::before { display: none; }
+
+.SNTPEngineering-methodology-list li:hover {
+  background: var(--c-white);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(8px);
+  border-left-width: 4px;
+  border-color: var(--c-red);
+}
+
+.SNTPEngineering-methodology-list-light li {
+  background: rgba(255,255,255,0.04);
+  border-left-color: rgba(200,16,46,0.3);
+}
+
+.SNTPEngineering-methodology-list-light li:hover {
+  background: rgba(255,255,255,0.07);
+  box-shadow: none;
+}
+
+.SNTPEngineering-methodology-list-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--c-red);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 6px;
+  animation: pulse-dot 2.5s ease-in-out infinite;
+}
+
+.SNTPEngineering-methodology-list-dot-light {
+  background: var(--c-white);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.3); opacity: 0.7; }
+}
+
+.SNTPEngineering-methodology-list li span {
+  font-size: 0.95rem;
+  color: var(--c-charcoal);
+  font-weight: 500;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+}
+
+.SNTPEngineering-methodology-list-light li span { color: var(--c-gray-light); }
+.SNTPEngineering-methodology-list-light li:hover span { color: var(--c-white); }
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1200px) {
+  .SNTPEngineering-container { padding: 0 20px; }
+  .SNTPEngineering-domains-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+  .SNTPEngineering-contact-layout { grid-template-columns: 1fr; gap: var(--space-lg); }
+  .SNTPEngineering-contact-map-container { height: 440px; }
+  .SNTPEngineering-stats-grid { gap: var(--space-md); }
+  .SNTPEngineering-advantages-tech-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .SNTPEngineering-advantages-block-content { padding: 28px 32px; }
+}
+
+@media (max-width: 1024px) {
+  .SNTPEngineering-expertise-skills-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+  .SNTPEngineering-expertise-hero-grid { grid-template-columns: 1fr; }
+  .SNTPEngineering-team-modern-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .SNTPEngineering-team-modern-stats { gap: var(--space-md); }
+  .SNTPEngineering-tech-grid { flex-wrap: wrap; }
+  .SNTPEngineering-tech-grid .SNTPEngineering-tech-card { flex: 1 1 calc(50% - 12px); }
+  .SNTPEngineering-value-prop-cards { flex-wrap: wrap; }
+  .SNTPEngineering-value-prop-cards .SNTPEngineering-value-prop-card { flex: 1 1 calc(50% - 8px); }
+  .SNTPEngineering-value-prop-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .SNTPEngineering-methodology-grid { flex-wrap: wrap; }
+  .SNTPEngineering-methodology-grid .SNTPEngineering-methodology-card { flex: 1 1 calc(50% - 16px); }
+}
+
+@media (max-width: 768px) {
+  .SNTPEngineering-hero-section {
+    min-height: 70vh;
+    padding: 50px 20px 40px;
+    background-attachment: scroll;
+  }
+  .SNTPEngineering-domains-grid { grid-template-columns: 1fr; }
+  .SNTPEngineering-team-content,
+  .SNTPEngineering-engineers-content { grid-template-columns: 1fr; gap: var(--space-lg); }
+  .SNTPEngineering-values-grid { grid-template-columns: 1fr; }
+  .SNTPEngineering-contact-map-container { height: 380px; }
+  .SNTPEngineering-contact-info-wrapper { text-align: center; }
+  .SNTPEngineering-contact-item {
+    text-align: center;
+    border-left: none;
+    border-top: 3px solid var(--c-red);
+  }
+  .SNTPEngineering-contact-item:hover {
+    transform: translateY(-4px);
+    border-top-width: 4px;
+  }
+  .SNTPEngineering-domain-card { padding: var(--space-md); }
+  .SNTPEngineering-hero-logo img { max-width: 160px; }
+
+  /* Expertise */
+  .SNTPEngineering-expertise-modern-section { padding: var(--space-xl) 20px; }
+  .SNTPEngineering-expertise-hero { padding: 26px 24px; margin-bottom: var(--space-lg); }
+  .SNTPEngineering-expertise-skills-grid { grid-template-columns: 1fr; }
+  .SNTPEngineering-expertise-skill-card { padding: 34px 24px; }
+
+  /* Team */
+  .SNTPEngineering-team-modern-section { padding: var(--space-xl) 20px; }
+  .SNTPEngineering-team-modern-grid { grid-template-columns: 1fr; }
+  .SNTPEngineering-team-modern-card { height: auto; min-height: 250px; }
+  .SNTPEngineering-team-modern-card-inner { padding: 32px 24px; }
+  .SNTPEngineering-team-modern-stats {
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: 40px 20px;
+  }
+  .SNTPEngineering-team-modern-stat-divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--c-red), transparent);
+  }
+
+  /* Tech */
+  .SNTPEngineering-tech-section { padding: var(--space-xl) 20px; }
+  .SNTPEngineering-tech-grid { flex-direction: column; }
+  .SNTPEngineering-tech-grid .SNTPEngineering-tech-card { flex: 1 1 auto; }
+  .SNTPEngineering-tech-card { padding: 32px 24px; }
+  .SNTPEngineering-tech-banner { padding: 36px 28px; }
+  .SNTPEngineering-tech-banner-content { flex-direction: column; text-align: center; gap: var(--space-md); }
+
+  /* Value prop */
+  .SNTPEngineering-value-prop-section { padding: var(--space-xl) 20px; }
+  .SNTPEngineering-value-prop-block { padding: 32px 24px; margin-bottom: var(--space-md); }
+  .SNTPEngineering-value-prop-block-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .SNTPEngineering-value-prop-cards { flex-direction: column; }
+  .SNTPEngineering-value-prop-cards .SNTPEngineering-value-prop-card { flex: 1 1 auto; }
+  .SNTPEngineering-value-prop-grid { grid-template-columns: 1fr; }
+  .SNTPEngineering-value-prop-synergy { padding: 36px 28px; }
+  .SNTPEngineering-value-prop-synergy-content { flex-direction: column; text-align: center; gap: var(--space-md); }
+
+  /* Methodology */
+  .SNTPEngineering-methodology-grid { flex-direction: column; }
+  .SNTPEngineering-methodology-grid .SNTPEngineering-methodology-card { flex: 1 1 auto; }
+
+  /* Advantages */
+  .SNTPEngineering-advantages-section { padding: var(--space-xl) 20px; }
+  .SNTPEngineering-advantages-block-content { padding: 36px 24px; }
+  .SNTPEngineering-advantages-block-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .SNTPEngineering-advantages-tech-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .SNTPEngineering-advantages-items-list { flex-direction: column; }
+  .SNTPEngineering-advantages-items-list .SNTPEngineering-advantages-list-item { flex: 1 1 auto; }
+
+  /* Stats */
+  .SNTPEngineering-stats-section { padding: var(--space-xl) 20px; }
+  .SNTPEngineering-stats-grid { grid-template-columns: 1fr; gap: var(--space-md); }
+  .SNTPEngineering-stats-card:last-child { grid-column: 1; max-width: 100%; }
+  .SNTPEngineering-stats-card-inner { padding: 38px 28px; }
+  .SNTPEngineering-stats-banner {
+    padding: 36px 28px;
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-md);
+  }
+
+  /* Vision */
+  .SNTPEngineering-vision-section { padding: var(--space-xl) 20px; }
+  .SNTPEngineering-vision-hero { padding: 36px 24px; }
+  .SNTPEngineering-vision-grid { grid-template-columns: 1fr; }
+  .SNTPEngineering-vision-timeline { padding: 32px 24px; }
+
+  /* Methodology */
+  .SNTPEngineering-methodology-section { padding: var(--space-xl) 20px; }
+  .SNTPEngineering-methodology-card { padding: 32px 24px; }
+  .SNTPEngineering-methodology-card-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+
+@media (max-width: 480px) {
+  .SNTPEngineering-hero-section { padding: 70px 16px 50px; }
+  .SNTPEngineering-hero-logo img { max-width: 140px; }
+  .SNTPEngineering-hero-title { letter-spacing: 3px; }
+  .SNTPEngineering-main-title-section { padding: var(--space-xl) 16px var(--space-lg); }
+  .SNTPEngineering-cta-button { padding: 12px 32px; font-size: 0.75rem; letter-spacing: 3px; }
+  .SNTPEngineering-contact-map-container { height: 320px; }
+
+  .SNTPEngineering-expertise-modern-section,
+  .SNTPEngineering-team-modern-section,
+  .SNTPEngineering-tech-section,
+  .SNTPEngineering-value-prop-section,
+  .SNTPEngineering-advantages-section,
+  .SNTPEngineering-vision-section,
+  .SNTPEngineering-stats-section,
+  .SNTPEngineering-methodology-section { padding: var(--space-lg) 16px; }
+
+  .SNTPEngineering-expertise-hero { padding: 32px 18px; }
+  .SNTPEngineering-expertise-skill-card { padding: 28px 18px; }
+  .SNTPEngineering-team-modern-card-inner { padding: 28px 18px; }
+  .SNTPEngineering-tech-card { padding: 28px 18px; }
+  .SNTPEngineering-tech-banner { padding: 30px 18px; }
+  .SNTPEngineering-value-prop-block { padding: 28px 18px; }
+  .SNTPEngineering-value-prop-synergy { padding: 30px 18px; }
+  .SNTPEngineering-advantages-block-content { padding: 28px 18px; }
+  .SNTPEngineering-advantages-tech-grid { grid-template-columns: 1fr; gap: 12px; }
+  .SNTPEngineering-stats-card-inner { padding: 32px 22px; }
+  .SNTPEngineering-stats-banner { padding: 30px 18px; }
+  .SNTPEngineering-vision-hero { padding: 28px 18px; }
+  .SNTPEngineering-vision-card { padding: 28px 18px; }
+  .SNTPEngineering-vision-timeline { padding: 28px 16px; }
+  .SNTPEngineering-methodology-card { padding: 28px 18px; }
+}
+
+/* ==================== PRINT & ACCESSIBILITÉ ==================== */
+@media print {
+  .SNTPEngineering-hero-section,
+  .SNTPEngineering-cta-button,
+  .SNTPEngineering-google-map { display: none !important; }
+  .SNTPEngineering-page { background: white !important; color: black !important; }
+  * { box-shadow: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.SNTPEngineering-cta-button:focus,
+.SNTPEngineering-contact-info a:focus {
+  outline: 2px solid var(--c-red);
+  outline-offset: 3px;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--c-red);
+  outline-offset: 2px;
+}
+
+
+/* ============================================================
+   NOUVEAUX BLOCS IMAGES
+   ============================================================ */
+
+/* --- Expertise Image Showcase --- */
+.SNTPEngineering-expertise-image-showcase {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 2px;
+  margin: var(--space-xl) 0;
+  box-shadow: var(--shadow-lg);
+}
+.SNTPEngineering-expertise-image-showcase img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%);
+  transition: transform var(--t-slow), filter var(--t-base);
+}
+.SNTPEngineering-expertise-image-showcase:hover img {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+.SNTPEngineering-expertise-image-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-md);
+  background: linear-gradient(transparent, rgba(10,10,10,0.85));
+}
+.SNTPEngineering-expertise-image-caption span {
+  font-family: var(--font-display);
+  color: var(--c-white);
+  letter-spacing: 6px;
+  font-size: 1rem;
+}
+
+/* --- Team Photo Banner --- */
+.SNTPEngineering-team-photo-banner {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  border-radius: 2px;
+  margin: var(--space-xl) 0;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--c-red);
+}
+.SNTPEngineering-team-photo-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(15%);
+  transition: transform var(--t-slow), filter var(--t-base);
+}
+.SNTPEngineering-team-photo-banner:hover img {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+.SNTPEngineering-team-photo-caption {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  background: var(--c-red);
+  padding: 8px 20px;
+  border-radius: 1px;
+}
+.SNTPEngineering-team-photo-caption span {
+  font-family: var(--font-display);
+  color: var(--c-white);
+  letter-spacing: 4px;
+  font-size: 0.85rem;
+}
+
+/* --- Team Engineer Banner --- */
+.SNTPEngineering-team-engineer-banner {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 2px;
+  margin-top: var(--space-xl);
+  box-shadow: var(--shadow-lg);
+}
+.SNTPEngineering-team-engineer-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(30%);
+  transition: transform var(--t-slow), filter var(--t-base);
+}
+.SNTPEngineering-team-engineer-banner:hover img {
+  transform: scale(1.03);
+  filter: grayscale(0%);
+}
+.SNTPEngineering-team-engineer-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10,10,10,0.7) 0%, rgba(200,16,46,0.25) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-lg);
+}
+.SNTPEngineering-team-engineer-quote {
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  color: var(--c-white);
+  font-style: italic;
+  font-weight: 300;
+  border-left: 3px solid var(--c-red);
+  padding-left: var(--space-md);
+  max-width: 700px;
+  line-height: 1.7;
+}
+
+/* --- Tech Image Split --- */
+.SNTPEngineering-tech-image-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  margin: var(--space-xl) 0;
+}
+.SNTPEngineering-tech-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid rgba(200,16,46,0.4);
+  height: 340px;
+}
+.SNTPEngineering-tech-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(25%);
+  transition: transform var(--t-slow), filter var(--t-base);
+}
+.SNTPEngineering-tech-image-wrapper:hover img {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+.SNTPEngineering-tech-image-badge {
+  position: absolute;
+  bottom: var(--space-md);
+  left: var(--space-md);
+  background: var(--c-red);
+  color: var(--c-white);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  padding: 8px 20px;
+  border-radius: 1px;
+}
+.SNTPEngineering-tech-image-text {
+  color: var(--c-gray-light);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  font-weight: 300;
+}
+.SNTPEngineering-tech-image-text strong {
+  color: var(--c-white);
+  font-weight: 600;
+}
+
+/* --- Vision Image Banner --- */
+.SNTPEngineering-vision-image-banner {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+  border-radius: 2px;
+  margin: var(--space-xl) 0;
+  box-shadow: var(--shadow-lg);
+}
+.SNTPEngineering-vision-image-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(30%);
+  transition: transform var(--t-slow), filter var(--t-base);
+}
+.SNTPEngineering-vision-image-banner:hover img {
+  transform: scale(1.03);
+  filter: grayscale(0%);
+}
+.SNTPEngineering-vision-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(10,10,10,0.75) 0%, rgba(200,16,46,0.2) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.SNTPEngineering-vision-image-overlay span {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.8rem);
+  color: var(--c-white);
+  letter-spacing: 8px;
+  text-align: center;
+  text-shadow: 0 0 40px rgba(200,16,46,0.5);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .SNTPEngineering-tech-image-split {
+    grid-template-columns: 1fr;
+  }
+  .SNTPEngineering-team-photo-banner,
+  .SNTPEngineering-team-engineer-banner,
+  .SNTPEngineering-expertise-image-showcase,
+  .SNTPEngineering-vision-image-banner {
+    height: 240px;
+  }
+}

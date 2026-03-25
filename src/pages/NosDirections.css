@@ -1,0 +1,622 @@
+/* src/pages/NosDirections.css */
+
+.nos-directions-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f9fafb 0%, #ffffff 100%);
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.nos-directions-page.loaded {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ═══════════════════════════════
+   Hero Section
+═══════════════════════════════ */
+.directions-hero {
+  position: relative;
+  height: 600px;
+  background-color: #1a1a1a;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 80px;
+}
+
+/* Désactivés — plus de traits ni de pattern */
+.directions-hero::before,
+.directions-hero::after {
+  display: none;
+}
+
+/* Overlay sombre pour lisibilité du texte */
+.directions-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.directions-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #ffffff;
+  padding: 0 20px;
+  max-width: 900px;
+}
+
+.directions-hero-icon {
+  display: none;
+}
+
+.directions-hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to right, #ffffff 0%, #f5f5f5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.directions-hero-subtitle {
+  font-size: 1.3rem;
+  margin: 0 0 40px 0;
+  opacity: 0.95;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: #e5e5e5;
+}
+
+.directions-hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin-top: 40px;
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.hero-stat::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: #dc2626;
+  border-radius: 2px;
+}
+
+.hero-stat svg {
+  display: none;
+}
+
+.hero-stat-number {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1;
+  margin: 8px 0;
+  color: #dc2626;
+  text-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+}
+
+.hero-stat-label {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #e5e5e5;
+}
+
+/* ═══════════════════════════════
+   Content Section
+═══════════════════════════════ */
+.directions-content {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.directions-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.directions-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.directions-section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 20px 0;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.directions-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
+  border-radius: 2px;
+}
+
+.directions-section-title::before {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: #4a4a4a;
+  border-radius: 2px;
+}
+
+.directions-section-description {
+  font-size: 1.15rem;
+  color: #4a4a4a;
+  line-height: 1.8;
+  margin: 40px 0 0 0;
+}
+
+/* ═══════════════════════════════
+   Grid
+═══════════════════════════════ */
+.directions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.direction-grid-item {
+  opacity: 0;
+  animation: slideUp 0.6s ease forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ═══════════════════════════════
+   Footer Info
+═══════════════════════════════ */
+.directions-footer-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+  padding-top: 60px;
+  border-top: 3px solid #dc2626;
+}
+
+.footer-info-card {
+  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+  padding: 32px;
+  border-radius: 8px;
+  border-left: 5px solid #dc2626;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.footer-info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.12);
+  border-left-width: 8px;
+}
+
+.footer-info-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-info-card p {
+  font-size: 1rem;
+  color: #4a4a4a;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ═══════════════════════════════
+   Section Nos Implantations
+═══════════════════════════════ */
+.directions-implantations-section {
+  margin: 80px 0 60px;
+  padding: 0 20px;
+}
+
+.directions-implantations-content {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-radius: 16px;
+  padding: 60px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.directions-implantations-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.implantations-icon {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 8px 24px rgba(220, 38, 38, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+.implantations-text {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.implantations-text h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+}
+
+.implantations-text p {
+  font-size: 16px;
+  color: #d1d5db;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.implantations-button {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: #dc2626;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 16px rgba(220, 38, 38, 0.3);
+}
+
+.implantations-button:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(220, 38, 38, 0.5);
+}
+
+.implantations-button svg {
+  transition: transform 0.3s ease;
+}
+
+.implantations-button:hover svg {
+  transform: translateX(4px);
+}
+
+/* ═══════════════════════════════
+   Animation scroll
+═══════════════════════════════ */
+@media (prefers-reduced-motion: no-preference) {
+  .direction-grid-item:nth-child(1) { animation-delay: 0.1s; }
+  .direction-grid-item:nth-child(2) { animation-delay: 0.2s; }
+  .direction-grid-item:nth-child(3) { animation-delay: 0.3s; }
+  .direction-grid-item:nth-child(4) { animation-delay: 0.4s; }
+  .direction-grid-item:nth-child(5) { animation-delay: 0.5s; }
+  .direction-grid-item:nth-child(6) { animation-delay: 0.6s; }
+  .direction-grid-item:nth-child(7) { animation-delay: 0.7s; }
+}
+
+/* ═══════════════════════════════
+   Responsive
+═══════════════════════════════ */
+@media (max-width: 1024px) {
+  .directions-hero {
+    margin-top: 70px;
+  }
+
+  .directions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+  }
+
+  .directions-implantations-content {
+    padding: 50px 30px;
+    gap: 30px;
+  }
+
+  .implantations-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .implantations-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .implantations-text h2 {
+    font-size: 24px;
+  }
+
+  .implantations-text p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .directions-hero {
+    height: 350px;
+    margin-top: 60px;
+  }
+
+  .directions-hero-title {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  .directions-hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .directions-section-title {
+    font-size: 2.2rem;
+  }
+
+  .directions-section-description {
+    font-size: 1.05rem;
+  }
+
+  .directions-content {
+    padding: 60px 0;
+  }
+
+  .directions-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .directions-footer-info {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .directions-implantations-section {
+    margin: 60px 0 40px;
+  }
+
+  .directions-implantations-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 24px;
+    gap: 24px;
+  }
+
+  .implantations-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .implantations-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .implantations-text h2 {
+    font-size: 22px;
+  }
+
+  .implantations-text p {
+    font-size: 14px;
+  }
+
+  .implantations-button {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .directions-hero {
+    height: 320px;
+    margin-top: 60px;
+  }
+
+  .directions-hero-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .directions-hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .directions-section-title {
+    font-size: 1.8rem;
+  }
+
+  .directions-content {
+    padding: 40px 0;
+  }
+
+  .directions-intro {
+    margin-bottom: 40px;
+  }
+
+  .footer-info-card {
+    padding: 24px;
+  }
+
+  .directions-implantations-section {
+    padding: 0 15px;
+    margin: 50px 0 30px;
+  }
+
+  .directions-implantations-content {
+    padding: 32px 20px;
+  }
+
+  .implantations-text h2 {
+    font-size: 20px;
+  }
+
+  .implantations-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+/* ═══════════════════════════════
+   Siège Social — carte pleine largeur
+═══════════════════════════════ */
+.direction-grid-item--featured {
+  width: 100%;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: slideUp 0.6s ease forwards;
+}
+
+/* La carte elle-même en mode horizontal */
+.direction-grid-item--featured .direction-card {
+  display: flex;
+  flex-direction: row;
+  min-height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Image à gauche, prend 40% de la largeur */
+.direction-grid-item--featured .direction-card-image-container {
+  width: 40%;
+  flex-shrink: 0;
+  min-height: 280px;
+}
+
+.direction-grid-item--featured .direction-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Contenu à droite */
+.direction-grid-item--featured .direction-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 48px;
+}
+
+.direction-grid-item--featured .direction-card-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+/* Label badge "Siège Social" */
+.direction-grid-item--featured .direction-card-image-container::after {
+  content: 'Siège Social';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #dc2626;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 3;
+}
+
+/* ── Responsive featured card ── */
+@media (max-width: 768px) {
+  .direction-grid-item--featured .direction-card {
+    flex-direction: column;
+  }
+
+  .direction-grid-item--featured .direction-card-image-container {
+    width: 100%;
+    min-height: 220px;
+  }
+
+  .direction-grid-item--featured .direction-card-content {
+    padding: 24px;
+  }
+
+  .direction-grid-item--featured .direction-card-title {
+    font-size: 1.4rem;
+  }
+}

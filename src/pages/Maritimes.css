@@ -1,0 +1,988 @@
+/* ====================
+   SNTP - MARITIMES
+   Design Sobre & Moderne
+   Palette : Rouge · Noir · Blanc · Gris
+   ==================== */
+
+:root {
+  --sntp-red-dark:      #8B0000;
+  --sntp-red:           #C1121F;
+  --sntp-red-light:     #E53935;
+  --sntp-black:         #0D0D0D;
+  --sntp-black-soft:    #1A1A1A;
+  --sntp-gray-darkest:  #2A2A2A;
+  --sntp-gray-dark:     #444444;
+  --sntp-gray:          #6B6B6B;
+  --sntp-gray-light:    #9E9E9E;
+  --sntp-gray-lighter:  #D9D9D9;
+  --sntp-gray-lightest: #F5F5F5;
+  --sntp-white:         #FFFFFF;
+  --sntp-text-dark:     #1A1A1A;
+
+  --shadow-sm:  0 1px 4px  rgba(0,0,0,0.08);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.10);
+  --shadow-lg:  0 8px 32px rgba(0,0,0,0.14);
+  --shadow-red: 0 4px 20px rgba(193,18,31,0.18);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+.Maritimes-page {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--sntp-text-dark);
+  background-color: var(--sntp-white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ======================================================
+   HERO
+   ====================================================== */
+
+.Maritimes-hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  color: var(--sntp-white);
+  overflow: hidden;
+}
+
+.Maritimes-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(13,13,13,0.93)  0%,
+    rgba(26,26,26,0.85)  50%,
+    rgba(90,0,13,0.78)   100%
+  );
+  z-index: 1;
+}
+
+.Maritimes-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at top right,
+    rgba(193,18,31,0.15) 0%,
+    transparent 60%
+  );
+  z-index: 1;
+}
+
+.Maritimes-hero-content {
+  position: relative;
+  max-width: 1200px;
+  z-index: 2;
+  padding: 0 3rem;
+  text-align: center;
+  animation: fadeInUp 0.7s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.Maritimes-title {
+  font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2rem;
+  color: var(--sntp-white);
+  position: relative;
+  display: inline-block;
+}
+
+.Maritimes-title::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 4px;
+  background: var(--sntp-red);
+  border-radius: 2px;
+}
+
+.Maritimes-description {
+  font-size: 1.05rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.82);
+  font-weight: 300;
+}
+
+.Maritimes-description strong {
+  color: var(--sntp-white);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+/* ======================================================
+   SECTION PRINCIPALE
+   ====================================================== */
+
+.Maritimes-main-section {
+  background: var(--sntp-white);
+  padding: 100px 0 120px;
+  position: relative;
+}
+
+/* --- Header centré pleine largeur --- */
+.Maritimes-main-header {
+  text-align: center;
+  max-width: 1400px;
+  margin: 0 auto 5rem;
+  padding: 0 3rem;
+}
+
+.Maritimes-subtitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--sntp-red);
+  letter-spacing: 0.25em;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.4rem;
+}
+
+.Maritimes-subtitle::before,
+.Maritimes-subtitle::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 3px;
+  background: var(--sntp-red);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.Maritimes-main-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: var(--sntp-black);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  padding-bottom: 1.4rem;
+  position: relative;
+}
+
+.Maritimes-main-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 3px;
+  background: var(--sntp-red);
+  border-radius: 2px;
+}
+
+/* --- Grille texte | image --- */
+.Maritimes-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.Maritimes-text-box {
+  animation: fadeInLeft 0.7s ease-out;
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.Maritimes-description-text {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--sntp-gray-dark);
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+.Maritimes-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.Maritimes-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  font-size: 0.95rem;
+  color: var(--sntp-text-dark);
+  line-height: 1.7;
+  padding: 1.1rem 1.5rem;
+  background: var(--sntp-gray-lightest);
+  border-left: 4px solid var(--sntp-red);
+  border-radius: 8px;
+  transition: transform 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+}
+
+.Maritimes-feature-item:hover {
+  transform: translateX(6px);
+  background: var(--sntp-white);
+  box-shadow: var(--shadow-md);
+}
+
+.Maritimes-feature-bullet {
+  color: var(--sntp-red);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Image */
+.Maritimes-image-wrapper {
+  animation: fadeInRight 0.7s ease-out;
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.Maritimes-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: var(--shadow-lg);
+  background-color: var(--sntp-black);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.Maritimes-image-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.20);
+}
+
+.Maritimes-image-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(193,18,31,0.14) 0%,
+    rgba(13,13,13,0.38)  100%
+  );
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.Maritimes-image-container:hover::before { opacity: 1; }
+
+.Maritimes-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.55s ease;
+  display: block;
+}
+
+.Maritimes-image-container:hover .Maritimes-img {
+  transform: scale(1.06);
+}
+
+.Maritimes-sntp-badge {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  background: var(--sntp-red);
+  color: var(--sntp-white);
+  padding: 11px 20px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.8px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.30);
+  z-index: 2;
+  animation: slideInLeft 0.7s ease-out 0.35s backwards;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-22px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.Maritimes-sntp-badge svg { font-size: 1rem; }
+
+/* ======================================================
+   SECTION SERVICES
+   ====================================================== */
+
+.Maritimes-projects-section {
+  background-color: var(--sntp-gray-lightest);
+  padding: 120px 0;
+  position: relative;
+}
+
+.Maritimes-projects-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--sntp-red);
+}
+
+.Maritimes-projects-header {
+  text-align: center;
+  max-width: 1400px;
+  margin: 0 auto 5rem;
+  padding: 0 3rem;
+}
+
+.Maritimes-projects-subtitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--sntp-red);
+  margin-bottom: 1rem;
+  letter-spacing: 0.25em;
+}
+
+.Maritimes-projects-title {
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  font-weight: 800;
+  color: var(--sntp-black);
+  margin-bottom: 1.4rem;
+  letter-spacing: -0.03em;
+}
+
+.Maritimes-projects-divider {
+  width: 56px;
+  height: 4px;
+  background: var(--sntp-red);
+  margin: 0 auto 1.8rem;
+  border-radius: 2px;
+}
+
+.Maritimes-projects-intro {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--sntp-gray-dark);
+  max-width: 680px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+.Maritimes-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.Maritimes-project-card {
+  text-align: center;
+  padding: 3rem 2.5rem;
+  background: var(--sntp-white);
+  border: 1px solid var(--sntp-gray-lighter);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.Maritimes-project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--sntp-red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s ease;
+}
+
+.Maritimes-project-card:hover::before { transform: scaleX(1); }
+
+.Maritimes-project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.Maritimes-project-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 2rem;
+  background: var(--sntp-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  color: var(--sntp-white);
+  border-radius: 12px;
+  transition: background 0.28s ease, transform 0.28s ease;
+}
+
+.Maritimes-project-card:hover .Maritimes-project-icon {
+  background: var(--sntp-red-dark);
+  transform: scale(1.08);
+}
+
+.Maritimes-project-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--sntp-black);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.Maritimes-project-card-description {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--sntp-gray-dark);
+  font-weight: 400;
+}
+
+/* ======================================================
+   SECTION PORTFOLIO
+   ====================================================== */
+
+.Maritimes-portfolio-section {
+  background: var(--sntp-white);
+  padding: 120px 0;
+  position: relative;
+}
+
+.Maritimes-portfolio-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--sntp-gray-lighter);
+}
+
+.Maritimes-portfolio-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  padding: 0 3rem;
+}
+
+.Maritimes-portfolio-subtitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--sntp-red);
+  margin-bottom: 1rem;
+  letter-spacing: 0.25em;
+  display: inline-block;
+  position: relative;
+}
+
+.Maritimes-portfolio-subtitle::after {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 2px;
+  background: var(--sntp-red);
+}
+
+.Maritimes-portfolio-title {
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--sntp-black);
+  margin-bottom: 1.4rem;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.Maritimes-portfolio-divider {
+  width: 56px;
+  height: 3px;
+  background: var(--sntp-red);
+  margin: 0 auto 1.5rem;
+  border-radius: 2px;
+}
+
+.Maritimes-portfolio-intro {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--sntp-gray-dark);
+  max-width: 640px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+.Maritimes-portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.Maritimes-portfolio-project-card {
+  position: relative;
+  background: var(--sntp-white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  cursor: pointer;
+  border: 1px solid var(--sntp-gray-lighter);
+}
+
+.Maritimes-portfolio-project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--sntp-red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s ease;
+  z-index: 3;
+}
+
+.Maritimes-portfolio-project-card:hover::before { transform: scaleX(1); }
+
+.Maritimes-portfolio-project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Featured */
+.Maritimes-portfolio-project-card.featured {
+  grid-column: span 2;
+}
+
+.Maritimes-portfolio-project-card.featured .Maritimes-portfolio-project-image {
+  height: 320px;
+}
+
+/* Image */
+.Maritimes-portfolio-project-image {
+  width: 100%;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.Maritimes-portfolio-project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s ease;
+}
+
+.Maritimes-portfolio-project-card:hover .Maritimes-portfolio-project-image img {
+  transform: scale(1.07);
+}
+
+.Maritimes-portfolio-project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(13,13,13,0.22) 50%,
+    rgba(13,13,13,0.55) 100%
+  );
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.Maritimes-portfolio-project-card:hover .Maritimes-portfolio-project-overlay {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(193,18,31,0.26) 50%,
+    rgba(90,0,13,0.65)  100%
+  );
+}
+
+/* Contenu carte */
+.Maritimes-portfolio-project-content {
+  padding: 1.6rem 1.8rem 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.Maritimes-portfolio-project-category {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--sntp-red);
+  letter-spacing: 0.10em;
+  margin-bottom: 0.7rem;
+  padding: 4px 10px;
+  background: rgba(193,18,31,0.07);
+  border-radius: 4px;
+  border-left: 3px solid var(--sntp-red);
+}
+
+.Maritimes-portfolio-project-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--sntp-black);
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
+
+.Maritimes-portfolio-project-card:hover .Maritimes-portfolio-project-title {
+  color: var(--sntp-red);
+}
+
+.Maritimes-portfolio-project-location {
+  font-size: 0.85rem;
+  color: var(--sntp-gray);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.Maritimes-portfolio-project-location svg {
+  color: var(--sntp-red);
+  font-size: 0.9rem;
+}
+
+.Maritimes-portfolio-project-detail {
+  font-size: 0.82rem;
+  color: var(--sntp-gray-dark);
+  font-style: italic;
+  padding: 0.8rem 1rem;
+  background: var(--sntp-gray-lightest);
+  border-left: 3px solid var(--sntp-red);
+  border-radius: 6px;
+  line-height: 1.6;
+}
+
+/* Badge */
+.Maritimes-portfolio-project-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--sntp-red);
+  color: var(--sntp-white);
+  padding: 6px 13px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  z-index: 2;
+}
+
+.Maritimes-portfolio-project-badge svg { font-size: 0.88rem; }
+
+/* ======================================================
+   SECTION ACHIEVEMENTS
+   ====================================================== */
+
+.Maritimes-achievements-section {
+  background: var(--sntp-black);
+  padding: 100px 0;
+  position: relative;
+}
+
+.Maritimes-achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.Maritimes-achievement-item {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 12px;
+  transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+}
+
+.Maritimes-achievement-item:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.08);
+  border-color: var(--sntp-red);
+}
+
+.Maritimes-achievement-number {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--sntp-red);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.Maritimes-achievement-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--sntp-white);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.Maritimes-achievement-detail {
+  font-size: 0.9rem;
+  color: var(--sntp-gray-light);
+  font-weight: 400;
+}
+
+/* ======================================================
+   SECTION CTA
+   ====================================================== */
+
+.Maritimes-cta-section {
+  background: var(--sntp-red);
+  padding: 110px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.Maritimes-cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.14) 0%, transparent 55%);
+}
+
+.Maritimes-cta-content {
+  text-align: center;
+  max-width: 880px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  padding: 0 3rem;
+}
+
+.Maritimes-cta-title {
+  font-size: clamp(2.2rem, 4.8vw, 3.8rem);
+  font-weight: 800;
+  color: var(--sntp-white);
+  margin-bottom: 1.4rem;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.Maritimes-cta-description {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.90);
+  margin-bottom: 3.5rem;
+  font-weight: 300;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Maritimes-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px 44px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.28s ease;
+  letter-spacing: 0.12em;
+  background-color: var(--sntp-white);
+  color: var(--sntp-red);
+  border: 2px solid var(--sntp-white);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.22);
+}
+
+.Maritimes-cta-btn:hover {
+  background-color: var(--sntp-black);
+  border-color: var(--sntp-black);
+  color: var(--sntp-white);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.38);
+}
+
+.Maritimes-cta-btn svg { transition: transform 0.28s ease; }
+.Maritimes-cta-btn:hover svg { transform: translateX(6px); }
+
+/* ======================================================
+   UTILITIES
+   ====================================================== */
+
+.Maritimes-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+::selection      { background-color: var(--sntp-red); color: var(--sntp-white); text-shadow: none; }
+::-moz-selection { background-color: var(--sntp-red); color: var(--sntp-white); text-shadow: none; }
+
+*:focus-visible {
+  outline: 2px solid var(--sntp-red);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar       { width: 8px; }
+::-webkit-scrollbar-track { background: var(--sntp-gray-lightest); }
+::-webkit-scrollbar-thumb {
+  background: var(--sntp-red);
+  border-radius: 4px;
+  border: 2px solid var(--sntp-gray-lightest);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--sntp-red-dark); }
+
+/* ======================================================
+   ANIMATIONS PROGRESSIVES
+   ====================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  .Maritimes-project-card { animation: fadeInUp 0.65s ease-out backwards; }
+  .Maritimes-project-card:nth-child(1) { animation-delay: 0.10s; }
+  .Maritimes-project-card:nth-child(2) { animation-delay: 0.20s; }
+  .Maritimes-project-card:nth-child(3) { animation-delay: 0.30s; }
+  .Maritimes-project-card:nth-child(4) { animation-delay: 0.40s; }
+  .Maritimes-project-card:nth-child(5) { animation-delay: 0.50s; }
+  .Maritimes-project-card:nth-child(6) { animation-delay: 0.60s; }
+
+  .Maritimes-portfolio-project-card { animation: fadeInUp 0.55s ease-out backwards; }
+  .Maritimes-portfolio-project-card:nth-child(1)  { animation-delay: 0.05s; }
+  .Maritimes-portfolio-project-card:nth-child(2)  { animation-delay: 0.10s; }
+  .Maritimes-portfolio-project-card:nth-child(3)  { animation-delay: 0.15s; }
+  .Maritimes-portfolio-project-card:nth-child(4)  { animation-delay: 0.20s; }
+  .Maritimes-portfolio-project-card:nth-child(5)  { animation-delay: 0.25s; }
+  .Maritimes-portfolio-project-card:nth-child(6)  { animation-delay: 0.30s; }
+  .Maritimes-portfolio-project-card:nth-child(7)  { animation-delay: 0.35s; }
+  .Maritimes-portfolio-project-card:nth-child(8)  { animation-delay: 0.40s; }
+  .Maritimes-portfolio-project-card:nth-child(9)  { animation-delay: 0.45s; }
+  .Maritimes-portfolio-project-card:nth-child(10) { animation-delay: 0.50s; }
+  .Maritimes-portfolio-project-card:nth-child(11) { animation-delay: 0.55s; }
+
+  .Maritimes-achievement-item { animation: fadeInUp 0.65s ease-out backwards; }
+  .Maritimes-achievement-item:nth-child(1) { animation-delay: 0.10s; }
+  .Maritimes-achievement-item:nth-child(2) { animation-delay: 0.20s; }
+  .Maritimes-achievement-item:nth-child(3) { animation-delay: 0.30s; }
+  .Maritimes-achievement-item:nth-child(4) { animation-delay: 0.40s; }
+}
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+
+@media (max-width: 1200px) {
+  .Maritimes-content-grid { gap: 4rem; }
+  .Maritimes-projects-grid,
+  .Maritimes-portfolio-grid { gap: 2rem; }
+  .Maritimes-portfolio-project-card.featured { grid-column: span 1; }
+  .Maritimes-portfolio-project-card.featured .Maritimes-portfolio-project-image { height: 220px; }
+}
+
+@media (max-width: 1024px) {
+  .Maritimes-content-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .Maritimes-image-wrapper { order: -1; }
+  .Maritimes-projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  .Maritimes-achievements-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .Maritimes-hero { min-height: 65vh; }
+  .Maritimes-main-section { padding: 80px 0 100px; }
+  .Maritimes-projects-section,
+  .Maritimes-portfolio-section { padding: 90px 0; }
+  .Maritimes-achievements-section,
+  .Maritimes-cta-section { padding: 80px 0; }
+
+  .Maritimes-main-header,
+  .Maritimes-content-grid,
+  .Maritimes-projects-header,
+  .Maritimes-projects-grid,
+  .Maritimes-portfolio-header,
+  .Maritimes-portfolio-grid,
+  .Maritimes-achievements-grid,
+  .Maritimes-cta-content { padding: 0 1.5rem; }
+
+  .Maritimes-main-header { margin-bottom: 3rem; }
+  .Maritimes-achievement-number { font-size: 3.2rem; }
+  .Maritimes-project-card { padding: 2.5rem 2rem; }
+  .Maritimes-portfolio-grid { grid-template-columns: 1fr; }
+  .Maritimes-portfolio-project-image { height: 200px; }
+}
+
+@media (max-width: 480px) {
+  .Maritimes-projects-grid,
+  .Maritimes-achievements-grid { grid-template-columns: 1fr; }
+  .Maritimes-project-card { padding: 2rem 1.5rem; }
+  .Maritimes-achievement-item { padding: 2rem 1.5rem; }
+  .Maritimes-hero-content,
+  .Maritimes-cta-content { padding: 0 1.2rem; }
+  .Maritimes-sntp-badge { font-size: 0.78rem; padding: 10px 14px; bottom: 16px; left: 16px; }
+  .Maritimes-cta-btn { padding: 15px 28px; font-size: 0.88rem; }
+  .Maritimes-project-icon { width: 68px; height: 68px; font-size: 28px; }
+  .Maritimes-portfolio-project-title { font-size: 1.05rem; }
+  .Maritimes-portfolio-title { font-size: clamp(1.8rem, 5vw, 2.6rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
