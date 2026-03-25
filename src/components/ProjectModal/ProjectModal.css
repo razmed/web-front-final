@@ -1,0 +1,363 @@
+/* src/components/ProjectModal/ProjectModal.css */
+
+/* Overlay - Fond transparent noir */
+.ProjectModal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+  animation: ProjectModal-fadeIn 0.3s ease-out;
+  overflow-y: auto;
+}
+
+@keyframes ProjectModal-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ✅ NOUVEAU: Conteneur en 2 colonnes (horizontal) */
+.ProjectModal-container {
+  position: relative;
+  max-width: 1400px; /* Plus large pour layout horizontal */
+  width: 100%;
+  height: 85vh; /* Hauteur fixe */
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  animation: ProjectModal-slideUp 0.4s ease-out;
+  display: grid;
+  grid-template-columns: 45% 55%; /* 45% image, 55% contenu */
+}
+
+@keyframes ProjectModal-slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Bouton de fermeture */
+.ProjectModal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ProjectModal-close:hover {
+  background-color: #C1121F;
+  color: white;
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 6px 20px rgba(193, 18, 31, 0.4);
+}
+
+.ProjectModal-close svg {
+  transition: inherit;
+}
+
+/* ✅ NOUVEAU: Image à gauche (colonne fixe) */
+.ProjectModal-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Prend toute la hauteur */
+  overflow: hidden;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px 40px 40px; /* ✅ Haut, Droite, Bas, Gauche */
+  box-sizing: border-box;
+}
+
+.ProjectModal-image {
+  width: 100%;
+  height: 100%;
+  /*object-fit: cover;*/
+  object-fit: contain;
+  object-position: center;
+}
+
+.ProjectModal-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.7) 0%,
+    transparent 100%
+  );
+}
+
+/* Badge catégorie sur l'image */
+.ProjectModal-category-badge {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background-color: #C1121F;
+  color: #F5F3F4;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(193, 18, 31, 0.4);
+  z-index: 5;
+}
+
+/* ✅ NOUVEAU: Contenu à droite (scrollable) */
+.ProjectModal-content {
+  padding: 50px 60px;
+  overflow-y: auto;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+
+.ProjectModal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ProjectModal-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.ProjectModal-content::-webkit-scrollbar-thumb {
+  background: #C1121F;
+  border-radius: 4px;
+}
+
+.ProjectModal-content::-webkit-scrollbar-thumb:hover {
+  background: #a00f1a;
+}
+
+/* En-tête avec métadonnées */
+.ProjectModal-header {
+  margin-bottom: 32px;
+}
+
+.ProjectModal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.ProjectModal-location,
+.ProjectModal-year {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #415A77;
+  font-weight: 500;
+}
+
+.ProjectModal-location svg,
+.ProjectModal-year svg {
+  flex-shrink: 0;
+}
+
+.ProjectModal-status {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ProjectModal-status--completed {
+  background-color: rgba(40, 167, 69, 0.15);
+  color: #28a745;
+}
+
+.ProjectModal-status--in_progress {
+  background-color: rgba(193, 18, 31, 0.15);
+  color: #C1121F;
+}
+
+/* Titre du projet */
+.ProjectModal-title {
+  font-size: clamp(28px, 3.5vw, 38px);
+  font-weight: 800;
+  color: #1B263B;
+  margin: 0 0 32px 0;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+/* Description */
+.ProjectModal-description-wrapper {
+  margin-bottom: 32px;
+  flex: 1;
+}
+
+.ProjectModal-section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1B263B;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 16px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #C1121F;
+}
+
+.ProjectModal-description {
+  font-size: 16px;
+  color: #415A77;
+  line-height: 1.8;
+  margin: 0;
+  white-space: pre-line;
+}
+
+/* Grille d'informations */
+.ProjectModal-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  background-color: #F5F3F4;
+  border-radius: 8px;
+  border: 2px solid rgba(27, 38, 59, 0.1);
+  margin-top: auto; /* Pousse vers le bas */
+}
+
+.ProjectModal-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ProjectModal-info-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #415A77;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ProjectModal-info-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1B263B;
+}
+
+/* ✅ RESPONSIVE: Retour au layout vertical sur mobile */
+@media (max-width: 1024px) {
+  .ProjectModal-container {
+    grid-template-columns: 1fr; /* Une seule colonne */
+    grid-template-rows: 350px 1fr; /* Image en haut, contenu en bas */
+    height: auto;
+    max-height: 95vh;
+  }
+
+  .ProjectModal-content {
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ProjectModal-overlay {
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  .ProjectModal-container {
+    max-width: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+    margin: 0;
+    grid-template-rows: 300px 1fr;
+  }
+
+  .ProjectModal-image-wrapper {
+    height: 100%;
+  }
+
+  .ProjectModal-content {
+    padding: 30px 20px;
+  }
+
+  .ProjectModal-close {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .ProjectModal-category-badge {
+    top: 16px;
+    left: 16px;
+    padding: 8px 16px;
+    font-size: 11px;
+  }
+
+  .ProjectModal-title {
+    font-size: 24px;
+  }
+
+  .ProjectModal-description {
+    font-size: 15px;
+  }
+
+  .ProjectModal-info-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ProjectModal-container {
+    grid-template-rows: 250px 1fr;
+  }
+
+  .ProjectModal-content {
+    padding: 24px 16px;
+  }
+
+  .ProjectModal-title {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  .ProjectModal-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
